@@ -1,0 +1,51 @@
+query SalaryCompleteViewQuery($where: WhereUniqueInputArgs!) {
+  salary(where: $where) {
+    id
+    paymentDate
+    userId
+    status
+    user {
+      id
+      displayName
+      email
+      phoneNumber
+      vacationPayment
+      language
+      address {
+        address
+        postalCode
+        city
+        country {
+          name_en
+        }
+      }
+    }
+    payslipUrl
+    feeInvoiceUrl
+    invoices {
+      id
+      visibleId
+      invoiceDate
+      reference
+      hoursWorked
+      status
+      subtotalDkk
+      paidAmountDkk
+      includeVat
+      totalPriceWithVat
+      vacationPayment
+      currency
+      totalPrice
+      customer {
+        name
+      }
+    }
+    deductions {
+      id
+      status
+      createdDate
+      description
+      imageUrl
+    }
+  }
+}

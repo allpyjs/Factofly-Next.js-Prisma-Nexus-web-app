@@ -1,0 +1,7 @@
+#import "../../../graphql/CooperationAgreementFragment.gql"
+
+mutation DeleteCooperationAgreementMutation($where: WhereUniqueInputArgs!) {
+  updateCooperationAgreement(data: { active: false }, where: $where) {
+    ...CooperationAgreementFragment
+  }
+}

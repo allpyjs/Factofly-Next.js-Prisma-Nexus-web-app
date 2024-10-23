@@ -1,0 +1,73 @@
+{
+  "headers": {
+    "create": "Create Cooperation Agreement",
+    "search": "Cooperation Agreements",
+    "view": "Cooperation Agreement",
+    "details": "Cooperation agreement details",
+    "edit": "Edit cooperation agreement"
+  },
+  "labels": {
+    "customer": "Customer",
+    "description": "Description",
+    "createdDate": "Created Date",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "openEnded": "Is this an open ended task?",
+    "terminationAgreement": "Termination agreement",
+    "taskDescription": "Task description",
+    "extraWork": "Extra work",
+    "extraWorkNotificationOther": "Please specify...",
+    "extraWorkNotification": "Extra work notification",
+    "priceDetails": "Price details",
+    "specialConditions": "Special conditions",
+    "amount": "Amount",
+    "paymentType": "Payment type",
+    "paymentTerm": "Payment term",
+    "paymentTermDays": "Days",
+    "paymentTermOther": "Please specify...",
+    "paymentTermSpecial": "Special terms regarding payment",
+    "equipmentSupplied": "Equipment supplied",
+    "equipmentDetails": "Provide details...",
+    "user": "User"
+  },
+  "descriptions": {
+    "terminationAgreement": "If it is a continuous collaboration or it must be possible to terminate along the way, describe what has been agreed regarding termination. It can e.g. be day to day notice, current month, to the first of a month, etc.",
+    "equipmentSupplied": "Has your customer provided equipment or extra assistance?",
+    "specialConditions": "Agree on a minimum number of hours, maximum price, bonus, performance terms, etc. Describe it as clearly as possible.",
+    "priceDetails": "If a fixed price has been agreed for the task. So what is the agreement if the customer wants things that are not part of the original description. Is it free, It is invoiced per. hour, new offer with fixed price, etc."
+  },
+  "buttons": {
+    "submit": "Submit cooperation agreement",
+    "update": "Update cooperation agreement",
+    "edit": "Edit",
+    "delete": "Delete",
+    "create": "Create Cooperation Agreement"
+  },
+  "messages": {
+    "updated": "Cooperation agreement updated",
+    "created": "Cooperation agreement created",
+    "deleted": "Cooperation agreement deleted",
+    "createAs": "You are creating this cooperation agreement as {{- displayName}}"
+  },
+  "errors": {
+    "create": "Error creating cooperation agreement",
+    "update": "Error updating cooperation agreement",
+    "delete": "Error deleting cooperation agreement"
+  },
+  "paymentTypes": {
+    "PER_HOUR": "Payment per Hour",
+    "FIXED": "Total fixed payment for the task/period"
+  },
+  "extraWorkNotifications": {
+    "WRITTEN_ESTIMATE": "Written on the basis of an estimate",
+    "WRITTEN_FIXED": "Written on the basis of a fixed offer",
+    "ORAL": "Orally",
+    "OTHER": "Other"
+  },
+  "paymentTerms": {
+    "CURRENT_MONTH_PLUS": "Current month + # days",
+    "ONGOING_WEEK_PLUS": "Ongoing week + # days",
+    "TASK_END_PLUS": "Task end + # days",
+    "OTHER": "Other"
+  }
+}

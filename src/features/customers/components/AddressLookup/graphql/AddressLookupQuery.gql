@@ -1,0 +1,11 @@
+query AddressLookupQuery($query: String!) {
+  vatSearch(query: $query) {
+    vatId
+    phoneNumber
+    email
+    address
+    name
+    city
+    postalCode
+  }
+}

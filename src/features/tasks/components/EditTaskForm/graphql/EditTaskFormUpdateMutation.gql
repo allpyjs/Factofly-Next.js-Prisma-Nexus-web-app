@@ -1,0 +1,7 @@
+#import "../../../graphql/TaskFragment.gql"
+
+mutation EditTaskFormUpdateMutation($input: TaskUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateTask(data: $input, where: $where) {
+    ...TaskFragment
+  }
+}

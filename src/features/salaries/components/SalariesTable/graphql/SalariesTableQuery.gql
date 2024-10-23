@@ -1,0 +1,62 @@
+fragment SalaryListItem on Query {
+  items: salaries(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "SalaryList_user_items") {
+    totalCount
+    edges {
+      node {
+        id
+        paymentDate
+        userId
+        status
+        grossIncome
+        paymentAmount
+        user {
+          id
+          displayName
+          email
+          phoneNumber
+          language
+          address {
+            address
+            postalCode
+            city
+            country {
+              name_en
+            }
+          }
+        }
+        invoices {
+          id
+          visibleId
+          invoiceDate
+          hoursWorked
+          status
+          subtotalDkk
+          paidAmountDkk
+          includeVat
+          vacationPayment
+          currency
+          totalPrice
+        }
+        deductions {
+          id
+          status
+          createdDate
+          description
+          imageUrl
+        }
+      }
+      cursor
+    }
+  }
+}
+
+query SalariesTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: SalaryWhereInputArgs
+  $orderBy: SalaryOrderByInputArgs
+) {
+  ...SalaryListItem
+}

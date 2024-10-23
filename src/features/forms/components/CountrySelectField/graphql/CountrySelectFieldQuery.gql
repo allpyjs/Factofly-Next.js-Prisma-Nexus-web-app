@@ -1,0 +1,8 @@
+query CountrySelectFieldQuery {
+  countries(orderBy: { name_en: asc }) {
+    id
+    name_en
+    name_da
+    code
+  }
+}

@@ -1,0 +1,7 @@
+#import "../../../graphql/TaskFragment.gql"
+
+query EditTaskFormQuery($where: WhereUniqueInputArgs!) {
+  task(where: $where) {
+    ...TaskFragment
+  }
+}

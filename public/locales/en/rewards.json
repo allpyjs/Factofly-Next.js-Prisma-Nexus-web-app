@@ -1,0 +1,43 @@
+{
+  "credit_one": "{{count}} credit",
+  "credit_other": "{{count}} credits",
+  "headers": {
+    "referrals": "Invite to your network",
+    "rewardTitle": "Give and receive a discount!",
+    "rewardSubtitle": "Give a friend a credit and receive a credit for yourself when they submit their first invoice.",
+    "shareLink": "share the link below...",
+    "shareEmail": "...or share via email",
+    "rewardsDashboard": "Your invites and credits",
+    "creditValue": "For every friend that you invite you will receive a credit that can give you {{reward}} off your next invoice"
+  },
+  "labels": {
+    "email": "Email",
+    "message": "Message",
+    "friendsReferred": "Friends referred",
+    "rewardsEarned": "Rewards earned",
+    "rewardsPending": "Rewards pending",
+    "creditsSpent": "Credits earned",
+    "creditsEarned": "Credits pending",
+    "availableCredits": "Available credits"
+  },
+  "messages": {
+    "noReferrals": "You have not yet referred anyone",
+    "defaultReferralMessage": "Hi 👋\n\nI’ve been using Factofly to get paid, avoid the headaches that come with a registered business, and have said a proper goodbye to admin tasks. \n\nI have a feeling this might be something for you as well.\n\nIf you use this link to sign up, there’s a discount in store for both of us. ",
+    "copied": "Link copied",
+    "creditsAvailable": "You currently have $t(credit, {\"count\": {{credits}} }) available",
+    "percentageDiscount": "{{value}}% (up to {{max}})",
+    "created": "Referral created",
+    "referralEmailTitle": "{{displayName}} has invited you to Factofly"
+  },
+  "buttons": {
+    "submit": "Send",
+    "copy": "Copy",
+    "loadMore": "Load more"
+  },
+  "referralStatus": {
+    "NONE": "Not registered",
+    "SIGNED_UP": "Registered",
+    "SENT_INVOICE": "Invoice sent",
+    "PAID_INVOICE": "Invoice paid"
+  }
+}

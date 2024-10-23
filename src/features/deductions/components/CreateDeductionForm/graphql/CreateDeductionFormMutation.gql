@@ -1,0 +1,7 @@
+#import "../../../graphql/DeductionFragmentWithImage.gql"
+
+mutation CreateDeductionFormMutation($input: DeductionCreateInputArgs!) {
+  createDeduction(data: $input) {
+    ...DeductionFragmentWithImage
+  }
+}

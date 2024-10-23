@@ -1,0 +1,6 @@
+mutation FetchPayrollMutation($where: WhereUniqueInputArgs!) {
+  fetchPayroll(where: $where) {
+    id
+    success
+  }
+}

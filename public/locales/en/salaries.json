@@ -1,0 +1,29 @@
+{
+  "salary": "Salary",
+  "headers": {
+    "search": "Salaries"
+  },
+  "labels": {
+    "reference": "Reference",
+    "user": "User",
+    "status": "Status",
+    "paymentDate": "Payment date",
+    "grossIncome": "Gross income",
+    "paymentAmount": "Payment amount"
+  },
+  "buttons": {
+    "sendToZenegy": "Send to Zenegy",
+    "updateFromZenegy": "Update from Zenegy",
+    "salaryPaid": "Salary paid",
+    "downloadPayslip": "Download payslip",
+    "downloadFeeInvoice": "Download fee invoice"
+  },
+  "messages": {
+    "updated": "Salary updated"
+  },
+  "statuses": {
+    "DRAFT": "Draft",
+    "SENT": "Sent",
+    "PAID": "Paid"
+  }
+}

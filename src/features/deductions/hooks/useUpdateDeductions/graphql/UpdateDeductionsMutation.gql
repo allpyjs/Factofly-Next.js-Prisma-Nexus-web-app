@@ -1,0 +1,5 @@
+mutation UpdateDeductionsMutation($status: DeductionStatusEnum, $where: [WhereUniqueInputArgs]!) {
+  updateDeductions(data: { status: $status }, where: $where) {
+    success
+  }
+}

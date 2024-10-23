@@ -1,0 +1,67 @@
+query SalaryViewInvoiceDetailsQuery($where: WhereUniqueInputArgs!) {
+  invoice(where: $where) {
+    id
+    visibleId
+    status
+    reference
+    note
+    createdDate
+    updatedDate
+    currency
+    includeVat
+    overdue
+    dueDate
+    vacationPayment
+    paymentDueDays
+    hoursWorked
+    customerContact
+    customerEmail
+    customerAddress
+    customerCity
+    customerPostalCode
+    sendInvoiceCopyTo
+    user {
+      id
+      displayName
+    }
+    customer {
+      id
+      name
+      email
+      type
+      address {
+        address
+        city
+        postalCode
+      }
+    }
+    jobType {
+      id
+      name_en
+      name_da
+    }
+    invoiceDate
+    startDate
+    endDate
+    termsAccepted
+    taskId
+    task {
+      id
+      title
+    }
+    totalPrice
+    totalPriceWithVat
+    vatAmount
+    vatPercentage
+    lines {
+      id
+      description
+      unit
+      quantity
+      unitPrice
+      index
+      discountPercentage
+      totalPrice
+    }
+  }
+}

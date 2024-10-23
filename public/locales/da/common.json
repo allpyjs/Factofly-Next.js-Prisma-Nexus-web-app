@@ -1,0 +1,101 @@
+{
+  "headers": {
+    "welcome": "Hej {{displayName}}, velkommen tilbage til Factofly",
+    "deleteConfirmation": "Er du sikker på du vil slette dette element?",
+    "openInvoices": "Åbne fakturaer",
+    "openTasks": "Åbne opgaver",
+    "details": "Detaljer"
+  },
+  "labels": {
+    "created": "Oprettet",
+    "updated": "Opdateret"
+  },
+  "pages": {
+    "verifyEmail": "Bekræft e-mail",
+    "error": "Program fejl"
+  },
+  "menu": {
+    "users": "Brugere",
+    "referral": "Henvisninger",
+    "navigation": "Navigation",
+    "admin": "Admin",
+    "account": "Konto",
+    "overview": "Dashboard",
+    "invoices": "Fakturaer",
+    "customers": "Kunder",
+    "tasks": "Opgaver",
+    "deductions": "Fradrag",
+    "cooperationAgreements": "Samhandelsaftaler",
+    "settings": "Min side",
+    "logOut": "Log ud",
+    "salary": "Lønudbetalinger",
+    "paidSalaries": "Betalt Lønninger",
+    "referrals": "Inviter en ven",
+    "debug": "Debug",
+    "reports": "Reports"
+  },
+  "messages": {
+    "noEntries": "Der er ingen poster, der matcher dine kriterier.",
+    "showingEntries_one": "Viser {{count}} post",
+    "showingEntries_other": "Viser {{count}} poster",
+    "showingEntriesTo": "Viser {{from}} til {{to}} poster",
+    "showingEntriesToOf": "Viser {{from}} til {{to}} af {{of}} poster",
+    "select": "Vælg...",
+    "show": "Viser",
+    "entries": "poster",
+    "dropZone": "Slip filer her, eller klik for at uploade.",
+    "row": "Række",
+    "emailSignature": "Med venlig hilsen",
+    "customerHelp": "Opret en kunde for at sende en faktura. Kunden skal altid oprettes inden du kan sende dem en faktura.",
+    "taskHelp": "Opret en opgave inde du starter et nyt projekt. Så er du altid forsikret mens du arbejder.",
+    "invoiceHelp": "Opret og send fakturaer, nemt og bekvemt. Når vi modtager betalingen, afregner vi skat og moms. Sidst men ikke mindst udbetaler vi dine penge som løn til dig"
+  },
+  "errors": {
+    "applicationError": "Der er opstået en fejl med applikationen. Kontakt venligst et medlem af supportteamet."
+  },
+  "buttons": {
+    "edit": "Rediger",
+    "cancel": "Afbryd",
+    "delete": "Slet",
+    "previous": "Forrige",
+    "next": "Næste",
+    "openPDF": "Åben PDF",
+    "loadMore": "Indlæs mere",
+    "register": "Opret bruger",
+    "print": "Udskrive",
+    "invoices": {
+      "create": "Opret faktura",
+      "edit": "Rediger faktura",
+      "delete": "Slet faktura"
+    },
+    "users": {
+      "create": "Opret bruger",
+      "edit": "Rediger bruger",
+      "delete": "Slet bruger"
+    },
+    "customers": {
+      "create": "Opret kunde",
+      "edit": "Rediger kunde",
+      "delete": "Slet kunde"
+    },
+    "tasks": {
+      "create": "Opret opgave",
+      "edit": "Rediger opgave",
+      "delete": "Slet opgave"
+    },
+    "deductions": {
+      "create": "Opret fradrag",
+      "edit": "Rediger fradrag",
+      "delete": "Slet fradrag"
+    },
+    "cooperationAgreements": {
+      "create": "Opret samhandelsaftale",
+      "edit": "Rediger samhandelsaftale",
+      "delete": "Slet samhandelsaftale"
+    }
+  },
+  "footer": {
+    "invoiceWithFactofly": "Fakturér med Factofly, ikke mere regnskab, mere tid til at hjælpe dine kunder✌️",
+    "madeWithLove": "Lavet med ❤️ i København"
+  }
+}

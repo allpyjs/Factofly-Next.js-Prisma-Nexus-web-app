@@ -1,0 +1,7 @@
+#import "../../../graphql/InvoiceFragment.gql"
+
+query EditInvoiceFormQuery($where: WhereUniqueInputArgs!) {
+  invoice(where: $where) {
+    ...InvoiceFragment
+  }
+}

@@ -1,0 +1,7 @@
+#import "../../../graphql/TaskFragment.gql"
+
+mutation CreateTaskFormMutation($input: TaskCreateInputArgs!) {
+  createTask(data: $input) {
+    ...TaskFragment
+  }
+}

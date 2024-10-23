@@ -1,0 +1,123 @@
+{
+  "headers": {
+    "search": "Brugere",
+    "language": "Sprog",
+    "contact": "Kontakt",
+    "address": "Adresseinformation",
+    "payment": "Betalingsinformation",
+    "settings": "Indstillinger",
+    "tax": "Skatteinformation",
+    "edit": "Rediger bruger",
+    "details": "Bruger detaljer",
+    "salaryInformation": "Lønoplysninger"
+  },
+  "accountSetup": {
+    "continue": "For at oprette en opgave og sende en faktura, skal du færdiggøre din profil. Du kan klare det med det samme eller gøre det når du er klar til at fakturere",
+    "buttons": {
+      "previous": "Forrige",
+      "next": "Næste",
+      "completeSetup": "Du bliver automatisk videresendt om {{seconds}}"
+    },
+    "steps": {
+      "situation": {
+        "title": "Velkommen indenfor 👋",
+        "subtitle": "Vi stiller dig lige nogle hurtige spørgsmål, så vi kan give dig den bedste Factofly oplevelse."
+      },
+      "profile": {
+        "title": "Lad os få styr på den vigtigste del af din profil med det samme🍿",
+        "subtitle": "Resten klarer vi senere."
+      },
+      "referral": { "title": "Så er vi der næsten 🙌", "subtitle": "Hvor har du hørt om os?" },
+      "welcome": { "title": "Så er vi klar 🎉", "subtitle": "Lad os få dig betalt - helt uden besvær!" }
+    },
+    "stepOf": "Trin {{count}} af {{max}}",
+    "complete": "Velkommen ombord"
+  },
+  "labels": {
+    "name": "Navn",
+    "country": "Land",
+    "language": "Sprog",
+    "jobType": "Job Type",
+    "firstName": "Fornavn",
+    "lastName": "Efternavn",
+    "email": "Email",
+    "address": "Adresse",
+    "city": "By",
+    "postalCode": "Postnummer",
+    "bankName": "Bank navn",
+    "bankRegistration": "Bank registreringsnummer",
+    "bankAccount": "Bank kontonummer",
+    "taxCard": "Skattekort",
+    "personId": {
+      "dk": "CPR"
+    },
+    "phoneNumber": "Telefon",
+    "createdDate": "Dato oprettet",
+    "updatedDate": "Dato opdateret",
+    "salaryPaymentType": "Lønbetalingstype",
+    "salaryPaymentValue": "Værdi",
+    "salaryPaymentDay": "Dag",
+    "baseRate": "Basisrente",
+    "userSpecifiedReferral": "Hvor har du hørt om os?",
+    "userSpecifiedReferral_short": "Hørt om",
+    "userSpecifiedReferralOther": "Angiv venligst",
+    "freelancerSituation": "Hvad beskriver bedst din nuværende situation?",
+    "freelancerSituation_short": "Situation",
+    "lastActive": "Sidst aktive",
+    "economicCustomerGroupId": "E-conomic customer group ID",
+    "economicEmployeeId": "E-conomic employee ID",
+    "vacationPayment": "Tilføj ferieindbetaling"
+  },
+  "descriptions": {
+    "taxCard": "Du skal kun vælge hovedkort, hvis Factofly er din primære indtægtskilde.\n\nHvis du bruger Factofly til din bi-indkomst, vælger du dit bikort.",
+    "vacationPayment": "Tilføj, hvis du vil tilbageholde 12,5%, for at tilføje til din feriekonto."
+  },
+  "buttons": {
+    "create": "Opret bruger",
+    "update": "Opdater bruger",
+    "saveSettings": "Gem indstillinger",
+    "saveUser": "Gem bruger",
+    "edit": "Rediger",
+    "impersonate": "Log ind som bruger",
+    "logOut": "Log ud"
+  },
+  "messages": {
+    "updated": "Bruger opdateret",
+    "created": "Bruger oprettet",
+    "noPaymentInfo": "Denne bruger har endnu ikke leveret bank- og skatteoplysninger",
+    "noneSelected": "Ingen bruger valgt",
+    "pleaseSelectUser": "Vælg venligst en bruger fra venstre side."
+  },
+  "errors": {
+    "create": "Fejl ved oprettelse af bruger",
+    "update": "Fejl ved opdatering af bruger",
+    "emailVerification": "<h1>Din e-mail mangler lige at blive bekræftet 👋</h1> Tjek din indbakke for en mail fra os - også din spamfolder. <br/>Modtager du ikke noget, kan du komme i kontakt med teamet i chatten eller på <phoneLink>71 96 00 54</phoneLink>."
+  },
+  "taxCard": {
+    "MAIN": "Hovedkort",
+    "SECONDARY": "Bikort"
+  },
+  "salaryPaymentType": {
+    "EARLY": "Tidlig",
+    "ON_PAYMENT": "Ved betaling",
+    "VALUE": "Værdi",
+    "TIMED": "Timed",
+    "NONE": "Ingen valgt",
+    "VIA_INVOICE": "Via faktura"
+  },
+  "referralSources": {
+    "GOOGLE": "Google",
+    "FACEBOOK": "Facebook",
+    "INSTAGRAM": "Instagram",
+    "LINKEDIN": "LinkedIn",
+    "NETWORK": "Netværk",
+    "A_KASSE": "A-kasse",
+    "OTHER": "Andet"
+  },
+  "freelancerSituations": {
+    "CURIOUS": "Jeg er nysgerrig på freelancing og Factofly",
+    "SINGLE_TASK": "Jeg har en enkelt opgave jeg skal fakturere",
+    "SIDE_JOB": "Jeg laver nogle opgaver ved siden af mit faste arbejde",
+    "MAIN_JOB": "Jeg er freelancer eller soloselvstændig på fuld tid"
+  }
+}

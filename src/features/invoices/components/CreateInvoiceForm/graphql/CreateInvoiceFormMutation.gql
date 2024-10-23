@@ -1,0 +1,7 @@
+#import "../../../graphql/InvoiceFragment.gql"
+
+mutation CreateInvoiceFormMutation($input: InvoiceCreateInputArgs!) {
+  createInvoice(data: $input) {
+    ...InvoiceFragment
+  }
+}

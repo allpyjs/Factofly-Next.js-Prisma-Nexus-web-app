@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    ".eslintrc.js",
+    "next.config.js",
+    "next-i18next.config.js",
+    "sentry.client.config.js",
+    "sentry.server.config.js"
+  ]
+}

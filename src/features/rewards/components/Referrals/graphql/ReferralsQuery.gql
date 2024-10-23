@@ -1,0 +1,26 @@
+query ReferralsQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: ReferralWhereInputArgs
+  $earned: ReferralWhereInputArgs
+  $orderBy: ReferralOrderByInputArgs
+) {
+  items: referrals(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "Referrals_items") {
+    totalCount
+    edges {
+      node {
+        id
+        createdDate
+        updatedDate
+        email
+        status
+      }
+    }
+  }
+  earned: referrals(first: $first, after: $cursor, skip: $skip, orderBy: $orderBy, where: $earned)
+    @connection(key: "Referrals_earned") {
+    totalCount
+  }
+}

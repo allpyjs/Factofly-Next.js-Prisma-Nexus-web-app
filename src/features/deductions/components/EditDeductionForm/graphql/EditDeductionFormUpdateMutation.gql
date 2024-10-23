@@ -1,0 +1,7 @@
+#import "../../../graphql/DeductionFragmentWithImage.gql"
+
+mutation EditDeductionFormUpdateMutation($input: DeductionUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateDeduction(data: $input, where: $where) {
+    ...DeductionFragmentWithImage
+  }
+}

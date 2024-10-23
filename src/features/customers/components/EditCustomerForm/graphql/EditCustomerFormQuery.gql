@@ -1,0 +1,7 @@
+#import "../../../graphql/CustomerFragment.gql"
+
+query EditCustomerFormQuery($where: WhereUniqueInputArgs!) {
+  customer(where: $where) {
+    ...CustomerFragment
+  }
+}

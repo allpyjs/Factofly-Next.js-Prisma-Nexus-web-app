@@ -1,0 +1,10 @@
+#import "../../../graphql/CooperationAgreementFragment.gql"
+
+mutation EditCooperationAgreementFormUpdateMutation(
+  $input: CooperationAgreementUpdateInputArgs!
+  $where: WhereUniqueInputArgs!
+) {
+  updateCooperationAgreement(data: $input, where: $where) {
+    ...CooperationAgreementFragment
+  }
+}

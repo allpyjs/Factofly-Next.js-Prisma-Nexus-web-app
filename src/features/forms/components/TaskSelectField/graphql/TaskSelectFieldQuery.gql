@@ -1,0 +1,9 @@
+query TaskSelectFieldQuery($where: TaskWhereInputArgs) {
+  # TODO: Make this a server side lookup if a user has more than a 100 tasks.
+  tasks(orderBy: { title: asc }, first: 100, where: $where) {
+    nodes {
+      id
+      title
+    }
+  }
+}

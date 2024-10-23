@@ -1,0 +1,2 @@
+-- AlterEnum
+ALTER TYPE "RecordType" ADD VALUE 'INVOICE_LINE';

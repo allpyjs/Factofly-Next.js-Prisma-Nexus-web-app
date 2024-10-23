@@ -1,0 +1,126 @@
+{
+  "headers": {
+    "search": "Users",
+    "language": "Language",
+    "contact": "Contact",
+    "address": "Address information",
+    "payment": "Payment details",
+    "settings": "Settings",
+    "tax": "Tax information",
+    "customers": "Customers",
+    "invoices": "Invoices",
+    "tasks": "Tasks",
+    "details": "User details",
+    "edit": "Edit user",
+    "salaryInformation": "Salary information"
+  },
+  "accountSetup": {
+    "continue": "To create a task and send an invoice, you need to complete your profile. You can do it right away or do it when you're ready to invoice",
+    "buttons": {
+      "previous": "Previous",
+      "next": "Next",
+      "completeSetup": "You will be automatically redirected {{seconds}}"
+    },
+    "steps": {
+      "situation": {
+        "title": "Welcome inside 👋",
+        "subtitle": "We'll just ask you a few quick questions so we can give you the best Factofly experience."
+      },
+      "profile": {
+        "title": "Let's get the most important part of your profile under control right away🍿",
+        "subtitle": "We will handle the rest later."
+      },
+      "referral": { "title": "We are almost there 🙌", "subtitle": "Where did you hear about us?" },
+      "welcome": { "title": "Then we are ready 🎉", "subtitle": "Let us get you paid - without any hassle!" }
+    },
+    "stepOf": "Step {{count}} of {{max}}",
+    "complete": "Welcome aboard"
+  },
+  "labels": {
+    "name": "Name",
+    "country": "Country",
+    "language": "Language",
+    "jobType": "Job Type",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal code",
+    "bankName": "Bank name",
+    "bankRegistration": "Bank registration number",
+    "bankAccount": "Bank account number",
+    "taxCard": "Tax card",
+    "personId": {
+      "dk": "CPR"
+    },
+    "phoneNumber": "Phone number",
+    "createdDate": "Created date",
+    "updatedDate": "Updated date",
+    "salaryPaymentType": "Salary payment type",
+    "salaryPaymentValue": "Value",
+    "salaryPaymentDay": "Day",
+    "baseRate": "Base rate",
+    "userSpecifiedReferral": "Where did you hear about us?",
+    "userSpecifiedReferral_short": "Heard about",
+    "userSpecifiedReferralOther": "Please specify",
+    "freelancerSituation": "What best describes your current situation?",
+    "freelancerSituation_short": "Situation",
+    "lastActive": "Last active",
+    "economicCustomerGroupId": "E-conomic customer group ID",
+    "economicEmployeeId": "E-conomic employee ID",
+    "vacationPayment": "Add holiday payment"
+  },
+  "descriptions": {
+    "taxCard": "Only choose main card if Factofly is your primary source of revenue.\n\nIf you use Factofly for your secondary income, you choose your secondary card.",
+    "vacationPayment": "Add if you want to withhold 12.5%, to add to your holiday account."
+  },
+  "buttons": {
+    "create": "Create User",
+    "update": "Update User",
+    "saveSettings": "Save Settings",
+    "saveUser": "Save User",
+    "edit": "Edit",
+    "impersonate": "Impersonate User",
+    "logOut": "Log out"
+  },
+  "messages": {
+    "updated": "User updated",
+    "created": "User created",
+    "noPaymentInfo": "This user has not yet supplied bank and tax information",
+    "noneSelected": "No user selected",
+    "pleaseSelectUser": "Please select a user from the left hand side."
+  },
+  "errors": {
+    "create": "Error creating user",
+    "update": "Error updating user",
+    "emailVerification": "<h1>Your email just needs to be verified 👋</h1>Check your inbox for an email from us - including your spam folder. <br/>If you don't receive anything, you can get in touch with the team at the chat or on <phoneLink>71 96 00 54</phoneLink>."
+  },
+  "taxCard": {
+    "MAIN": "Main tax card",
+    "SECONDARY": "Secondary tax card"
+  },
+  "salaryPaymentType": {
+    "EARLY": "Early",
+    "ON_PAYMENT": "On payment",
+    "VALUE": "Value",
+    "TIMED": "Timed",
+    "NONE": "None selected",
+    "VIA_INVOICE": "Via invoice"
+  },
+  "referralSources": {
+    "GOOGLE": "Google",
+    "FACEBOOK": "Facebook",
+    "INSTAGRAM": "Instagram",
+    "LINKEDIN": "LinkedIn",
+    "NETWORK": "Network",
+    "A_KASSE": "A-kasse",
+    "OTHER": "Other"
+  },
+  "freelancerSituations": {
+    "CURIOUS": "I am curious about freelancing and FactoFly",
+    "SINGLE_TASK": "I have a single task that I want to invoice for",
+    "SIDE_JOB": "I do some freelancing work on the side of my regular job",
+    "MAIN_JOB": "I am a full-time freelancer or self-employed"
+  }
+}

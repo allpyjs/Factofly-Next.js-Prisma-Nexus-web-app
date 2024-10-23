@@ -1,0 +1,37 @@
+{
+  "headers": {
+    "title": "Appendix til ansættelseskontrakt",
+    "agreementInformation": "Aftale omkring afregning",
+    "taskInformation": "Opgave information",
+    "invoiceInformation": "Faktura information"
+  },
+  "fields": {
+    "worker": "Arbejdstager",
+    "customer": "Kunde",
+    "taskNumber": "Opgavenummer",
+    "userNumber": "Brugernummer",
+    "date": "Dato",
+    "invoiceDate": "Faktureringsdato",
+    "startDate": "Ansættelse start",
+    "endDate": "Ansættelse slut",
+    "hours": "Antal timer",
+    "jobType": "Job type",
+    "description": "Beskrivelse",
+    "paymentType": "Betalingstype",
+    "paymentAmount": "Betalingsbeløb",
+    "vatId": {
+      "dk": "CVR"
+    },
+    "total": "Total",
+    "lineTotal": "Total",
+    "amount": "Antal",
+    "price": "Pris",
+    "subtotal": "Subtotal"
+  },
+  "values": {
+    "later": "Aftale senere",
+    "empty": "none",
+    "paymentDueDays": "Betalingsbetingelser: Net {{days}} dage - forfalden {{- date}}",
+    "pricePerHour": "Gennemsnitlig timepris: {{price}} eklusiv moms"
+  }
+}

@@ -1,0 +1,24 @@
+#import "../../../graphql/TaskFragment.gql"
+
+fragment TaskListItem on Query {
+  items: tasks(first: $first, after: $after, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "TaskList_user_items") {
+    totalCount
+    edges {
+      node {
+        ...TaskFragment
+      }
+      cursor
+    }
+  }
+}
+
+query TasksTableQuery(
+  $first: Int!
+  $after: String
+  $skip: Int
+  $where: TaskWhereInputArgs
+  $orderBy: TaskOrderByInputArgs
+) {
+  ...TaskListItem
+}

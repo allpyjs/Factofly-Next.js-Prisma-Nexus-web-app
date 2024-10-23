@@ -1,0 +1,43 @@
+{
+  "credit_one": "{{count}} kredit",
+  "credit_other": "{{count}} kreditter",
+  "headers": {
+    "referrals": "Inviter dit netværk",
+    "rewardTitle": "Giv og få rabat!",
+    "rewardSubtitle": "Inviter en ven til Factofly og få en rabat til jer begge, når de sender deres første faktura.",
+    "shareLink": "del linket nedenfor...",
+    "shareEmail": "...eller del via e-mail",
+    "rewardsDashboard": "Dine invitationer og credits",
+    "creditValue": "For hver ven du inviterer bliver du tildelt én credit, der kan give dig {{reward}} i rabat på din næste faktura"
+  },
+  "labels": {
+    "email": "E-mail",
+    "message": "Besked",
+    "friendsReferred": "Venner henvist",
+    "rewardsEarned": "Belønninger optjent",
+    "rewardsPending": "Afventer belønninger",
+    "creditsSpent": "Brugte kreditter",
+    "creditsEarned": "Kreditter optjent",
+    "availableCredits": "Tilgængelige kreditter"
+  },
+  "messages": {
+    "noReferrals": "Du har endnu ikke henvist nogen",
+    "defaultReferralMessage": "Hej👋\n\nJeg har brugt Factofly til at tage mig betalt for mit arbejde, undgå besværet ved et CVR nummer, og har sagt pænt farvel til administration.\n\nJeg tænkte det måske også kunne være noget for dig.\n\nHvis du bruger linket her, udløser det en rabat til os begge to.",
+    "copied": "Linket er kopieret",
+    "creditsAvailable": "Du har i øjeblikket $t(credit, {\"count\": {{credits}} }) tilgængelig",
+    "percentageDiscount": "{{value}}% (op til {{max}})",
+    "created": "Henvisning oprettet",
+    "referralEmailTitle": "{{displayName}} har inviteret dig til Factofly"
+  },
+  "buttons": {
+    "submit": "Send",
+    "copy": "Kopier",
+    "loadMore": "Indlæs mere"
+  },
+  "referralStatus": {
+    "NONE": "Ikke registreret",
+    "SIGNED_UP": "Registreret",
+    "SENT_INVOICE": "Faktura sendt",
+    "PAID_INVOICE": "Faktura betalt"
+  }
+}

@@ -1,0 +1,7 @@
+#import "../../../graphql/DeductionFragmentWithImage.gql"
+
+query EditDeductionFormQuery($where: WhereUniqueInputArgs!) {
+  deduction(where: $where) {
+    ...DeductionFragmentWithImage
+  }
+}

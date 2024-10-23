@@ -1,0 +1,23 @@
+#import "../../../graphql/CooperationAgreementFragment.gql"
+
+fragment CooperationAgreementListItem on Query {
+  items: cooperationAgreements(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "CooperationAgreementList_user_items") {
+    totalCount
+    edges {
+      node {
+        ...CooperationAgreementFragment
+      }
+    }
+  }
+}
+
+query CooperationAgreementsTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: CooperationAgreementWhereInputArgs
+  $orderBy: CooperationAgreementOrderByInputArgs
+) {
+  ...CooperationAgreementListItem
+}

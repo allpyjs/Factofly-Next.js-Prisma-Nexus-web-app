@@ -1,0 +1,44 @@
+fragment CustomerList_user on Query {
+  items: customers(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "CustomerList_user_items") {
+    totalCount
+    edges {
+      node {
+        id
+        urn
+        name
+        vatId
+        user {
+          id
+          displayName
+          email
+        }
+        email
+        phoneNumber
+        type
+        vatId
+        address {
+          address
+          city
+          region
+          postalCode
+          country {
+            name_en
+          }
+        }
+        updatedDate
+        createdDate
+      }
+    }
+  }
+}
+
+query CustomersTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: CustomerWhereInputArgs
+  $orderBy: CustomerOrderByInputArgs
+) {
+  ...CustomerList_user
+}

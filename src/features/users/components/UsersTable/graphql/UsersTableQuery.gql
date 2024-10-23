@@ -1,0 +1,35 @@
+query UsersTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: UserWhereInputArgs
+  $orderBy: UserOrderByInputArgs
+) {
+  items: users(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "UserList") {
+    totalCount
+    edges {
+      node {
+        id
+        firstName
+        lastName
+        displayName
+        email
+        phoneNumber
+        jobType {
+          id
+          name_en
+        }
+        unit
+        currency
+        language
+        referral
+        createdDate
+        updatedDate
+        userSpecifiedReferral
+        freelancerSituation
+        lastActive
+      }
+    }
+  }
+}

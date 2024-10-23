@@ -1,0 +1,57 @@
+{
+  "deduction": "Deduction",
+  "headers": {
+    "create": "Create deduction",
+    "search": "Deductions",
+    "status": "Deduction status",
+    "details": "Deduction details",
+    "edit": "Edit deduction",
+    "openDeductions": "Open deductions"
+  },
+  "labels": {
+    "description": "Description",
+    "status": "Status",
+    "createdDate": "Created Date",
+    "imageFile": "Image",
+    "user": "User",
+    "currency": "Currency",
+    "total": "Total",
+    "includeVat": "Include VAT"
+  },
+  "descriptions": {
+    "total": "This should be the total paid amount including any VAT, if any"
+  },
+  "buttons": {
+    "submit": "Submit deduction",
+    "update": "Update deduction",
+    "edit": "Edit",
+    "delete": "Delete",
+    "approveAll": "Approve all",
+    "approveSelected": "Approve selected",
+    "rejectSelected": "Reject selected"
+  },
+  "statuses": {
+    "APPROVED": "Approved",
+    "DECLINED": "Declined",
+    "DRAFT": "Draft",
+    "DELETED_BY_USER": "Deleted by User",
+    "SENT": "Sent"
+  },
+  "messages": {
+    "updated": "Deduction updated",
+    "created": "Deduction created",
+    "createAs": "You are creating this deduction as {{- displayName}}",
+    "noOpenDeductions": "There are no outstanding deductions awaiting approval",
+    "noSalaryDeductions": "There are no deductions associated with this salary payment",
+    "deductionsSelected_one": "You have {{count}} deduction selected",
+    "deductionsSelected_other": "You have {{count}} deductions selected"
+  },
+  "errors": {
+    "create": "Error creating deduction",
+    "update": "Error updating deduction"
+  },
+  "validation": {
+    "fileRequired": "Image is required",
+    "fileTooLarge": "The image is too large"
+  }
+}

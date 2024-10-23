@@ -1,0 +1,101 @@
+{
+  "headers": {
+    "welcome": "Hi {{displayName}}, welcome back to Factofly",
+    "deleteConfirmation": "Are you sure that you wish to delete this item?",
+    "openInvoices": "Open invoices",
+    "openTasks": "Open tasks",
+    "details": "Details"
+  },
+  "labels": {
+    "created": "Created",
+    "updated": "Updated"
+  },
+  "pages": {
+    "verifyEmail": "Verify email",
+    "error": "Application error"
+  },
+  "menu": {
+    "users": "Users",
+    "referral": "Referrals",
+    "navigation": "Navigation",
+    "admin": "Admin",
+    "account": "Account",
+    "overview": "Dashboard",
+    "invoices": "Invoices",
+    "customers": "Customers",
+    "tasks": "Tasks",
+    "deductions": "Deductions",
+    "cooperationAgreements": "Cooperation agreements",
+    "settings": "Profile",
+    "logOut": "Log out",
+    "salary": "Salary payments",
+    "paidSalaries": "Paid salaries",
+    "referrals": "Invite a friend",
+    "debug": "Debug",
+    "reports": "Reports"
+  },
+  "messages": {
+    "noEntries": "There are no entries that match your criteria.",
+    "showingEntries_one": "Showing {{count}} entry",
+    "showingEntries_other": "Showing {{count}} entries",
+    "showingEntriesTo": "Showing {{from}} to {{to}} entries",
+    "showingEntriesToOf": "Showing {{from}} to {{to}} of {{of}} entries",
+    "select": "Select...",
+    "show": "Show",
+    "entries": "entries",
+    "dropZone": "Drop files here or click to upload.",
+    "row": "Row",
+    "emailSignature": "Kind regards,",
+    "customerHelp": "Create a new customer to send an invoice. The customer needs to be listed before you can send them an invoice.",
+    "taskHelp": "Create a task before you begin a project. We'll then make sure that you're always insured while working.",
+    "invoiceHelp": "Create and send invoices, quickly and easily, to your customer. When we receive the payment we'll deduct taxes and VAT. Last but not least we'll pay out your money as salary."
+  },
+  "errors": {
+    "applicationError": "There has been an error with the application. Please contact a member of the support team."
+  },
+  "buttons": {
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "previous": "Previous",
+    "next": "Next",
+    "openPDF": "Open PDF",
+    "loadMore": "Load more",
+    "register": "Create user",
+    "print": "Print",
+    "invoices": {
+      "create": "Create invoice",
+      "edit": "Edit invoice",
+      "delete": "Delete invoice"
+    },
+    "users": {
+      "create": "Create user",
+      "edit": "Edit user",
+      "delete": "Delete user"
+    },
+    "customers": {
+      "create": "Create customer",
+      "edit": "Edit customer",
+      "delete": "Delete customer"
+    },
+    "tasks": {
+      "create": "Create task",
+      "edit": "Edit task",
+      "delete": "Delete task"
+    },
+    "deductions": {
+      "create": "Create deduction",
+      "edit": "Edit deduction",
+      "delete": "Delete deduction"
+    },
+    "cooperationAgreements": {
+      "create": "Create cooperation agreement",
+      "edit": "Edit cooperation agreement",
+      "delete": "Delete cooperation agreement"
+    }
+  },
+  "footer": {
+    "invoiceWithFactofly": "Invoice with Factofly, no more accounting, more time to help your customers✌️",
+    "madeWithLove": "Made with ❤️ in Copenhagen"
+  }
+}

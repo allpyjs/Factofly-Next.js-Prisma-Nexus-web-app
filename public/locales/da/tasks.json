@@ -1,0 +1,83 @@
+{
+  "task": "Task",
+  "headers": {
+    "search": "Opgaver",
+    "details": "Opgave detaljer",
+    "edit": "Rediger opgave",
+    "customer": "Kunde",
+    "taskInformation": "Opgaveinformation",
+    "execution": "Udførsel",
+    "status": "Opgave status",
+    "create": "Opret opgave"
+  },
+  "labels": {
+    "title": "Titel",
+    "customer": "Kunde",
+    "customerName": "Navn",
+    "customerEmail": "Kunde email",
+    "customerType": "Type",
+    "customerAddress": "Adresse",
+    "status": "Status",
+    "reference": "Reference",
+    "jobType": "Job type",
+    "startDate": "Start dato",
+    "endDate": "Slut dato",
+    "expectedHours": "Antal timer",
+    "user": "Bruger",
+    "termsAccepted": "Betingelser accepteret",
+    "description": "Beskrivelse af arbejdet",
+    "paymentType": "Betalingstype",
+    "paymentAmount": "Betalingsbeløb"
+  },
+  "descriptions": {
+    "reference": "Skriv en reference, hvis kunden har brug for dette. Efterlad feltet tomt hvis ikke.",
+    "description": "Beskriv det arbejde du skal lave"
+  },
+  "buttons": {
+    "create": "Opret opgave",
+    "createInvoice": "Opret faktura",
+    "submit": "Indsend opgave",
+    "update": "Opdater opgave",
+    "edit": "Rediger",
+    "saveAsDraft": "Gem som kladde",
+    "downloadContract": "Download kontrakt"
+  },
+  "terms": "Ved oprettelse af opgaven accepterer jeg de almindelige forretningsbetingelser. Herunder at de indtastede oplysninger er korrekte, at jeg er ansat af Factofly under udførelse af opgaven og har såkaldt instruktionsbeføjelse i den forbindelse.",
+  "statuses": {
+    "APPROVED": "Godkendt",
+    "DENIED": "Afvist",
+    "DRAFT": "Kladde",
+    "MORE_INFO_NEEDED": "Der er brug for mere information",
+    "PENDING": "Afventer",
+    "SENT": "Sendt",
+    "CANCELLED": "Annulleret",
+    "COMPANY_DISPUTE": "Uoverenstemmelse med firma",
+    "DEBT_COLLECTION": "Til inddrivelse",
+    "DENIED_BY_COMPANY": "Afvist af firma",
+    "LATE_PAYMENT": "Betaling forsinket",
+    "PAID": "Betalt",
+    "SALARY_PAID": "Løn udbetalt",
+    "SENT_TO_COMPANY": "Sendt til firma"
+  },
+  "taskPaymentTypes": {
+    "PER_HOUR": "Pr. time",
+    "PROJECT_PRICE": "Projekt pris",
+    "NULL": "None"
+  },
+  "messages": {
+    "updated": "Opgave opdateret",
+    "created": "Opgave oprettet",
+    "updatedStatus": "Opgave status opdateret",
+    "readOnly": "Denne opgave er markeret som \"{{status}}\" og kan ikke redigeres.",
+    "createAs": "Du opretter denne opgave som {{- displayName}}"
+  },
+  "validation": {
+    "termsAccepted": "Betingelser skal godkendes"
+  },
+  "errors": {
+    "create": "Fejl ved oprettelse af opgave",
+    "update": "Fejl ved opdatering af opgave",
+    "updateStatus": "Fejl ved opdatering af opgave status",
+    "copy": "Der opstod en fejl med at kopiere den originale faktura."
+  }
+}

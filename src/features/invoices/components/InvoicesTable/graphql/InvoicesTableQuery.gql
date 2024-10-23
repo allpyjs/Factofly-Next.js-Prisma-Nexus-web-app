@@ -1,0 +1,24 @@
+#import "../../../graphql/InvoiceFragment.gql"
+
+fragment InvoiceListItem on Query {
+  items: invoices(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "InvoiceList_user_items") {
+    totalCount
+    edges {
+      node {
+        ...InvoiceFragment
+      }
+      cursor
+    }
+  }
+}
+
+query InvoicesTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: InvoiceWhereInputArgs
+  $orderBy: InvoiceOrderByInputArgs
+) {
+  ...InvoiceListItem
+}

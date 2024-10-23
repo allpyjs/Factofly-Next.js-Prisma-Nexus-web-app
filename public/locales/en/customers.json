@@ -1,0 +1,79 @@
+{
+  "headers": {
+    "create": "Create customer",
+    "contactDetails": "Contact details",
+    "contactPerson": "Contact person",
+    "address": "Address information",
+    "payment": "Payment details",
+    "search": "Customers",
+    "openInvoices": "Open invoices",
+    "openTasks": "Open tasks",
+    "contact": "Contact",
+    "details": "Customer details",
+    "edit": "Edit customer"
+  },
+  "labels": {
+    "name": "Name",
+    "companyName": "Company name",
+    "email": "Email",
+    "phoneNumber": "Telephone",
+
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "postalCode": "Postal code",
+
+    "type": "Customer type",
+    "types": {
+      "business": "Business",
+      "private": "Private"
+    },
+
+    "paymentDueDays": "Payment Due Days",
+    "vatId": {
+      "dk": "CVR / Registration number",
+      "other": "Organisation or registration nummer"
+    },
+    "ean": "EAN Number",
+    "user": "User",
+
+    "addressLookup": {
+      "vatId": {
+        "dk": "CVR"
+      }
+    },
+    "economicCustomerId": "E-conomic ID",
+    "allowEarlyPayment": "Allow early payment"
+  },
+  "placeholders": {
+    "addressLookup": "Search using customer's name or CVR (VAT) number"
+  },
+  "descriptions": {
+    "paymentDueDays": "Standard number of payment days. Can also be changed per invoice",
+    "ean": "The customer's EAN number used to invoice. Only use if your customer has provided an EAN. Otherwise leave empty.",
+    "address": {
+      "business": "The company's street name and number",
+      "private": "The customer's street name and number"
+    }
+  },
+  "buttons": {
+    "create": "Create Customer",
+    "update": "Update Customer"
+  },
+  "messages": {
+    "updated": "Customer updated",
+    "created": "Customer created",
+    "addressLookup": { "noResults": "There were no results found that matched your query" },
+    "createAs": "You are creating this customer as {{- displayName}}",
+    "validEANLength": "EAN must be exactly 13 characters"
+  },
+  "errors": {
+    "create": "Error creating customer",
+    "update": "Error updating customer",
+    "addressLookup": "There was an error retrieving the search results"
+  },
+  "customerTypes": {
+    "company": "Company",
+    "person": "Person"
+  }
+}

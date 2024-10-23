@@ -1,0 +1,7 @@
+#import "./UserContextFragment.gql"
+
+query ImpersonateUserQuery($where: WhereUniqueInputArgs!) {
+  user(where: $where) {
+    ...UserContextFragment
+  }
+}

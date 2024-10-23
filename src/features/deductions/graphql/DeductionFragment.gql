@@ -1,0 +1,16 @@
+fragment DeductionFragment on Deduction {
+  id
+  status
+  active
+  description
+  createdDate
+  updatedDate
+  total
+  totalDkk
+  includeVat
+  currency
+  user {
+    id
+    displayName
+  }
+}

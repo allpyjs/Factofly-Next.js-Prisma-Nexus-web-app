@@ -1,0 +1,7 @@
+#import "../../../graphql/UserFragment.gql"
+
+query UserDetailsQuery($where: WhereUniqueInputArgs!) {
+  user(where: $where) {
+    ...UserFragment
+  }
+}

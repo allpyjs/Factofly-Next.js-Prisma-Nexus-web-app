@@ -1,0 +1,7 @@
+#import "./UserContextFragment.gql"
+
+query GetLoggedInUser {
+  me {
+    ...UserContextFragment
+  }
+}

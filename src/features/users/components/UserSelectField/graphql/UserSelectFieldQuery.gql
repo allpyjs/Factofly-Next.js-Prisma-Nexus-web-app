@@ -1,0 +1,9 @@
+query UserSelectFieldQuery($where: UserWhereInputArgs) {
+  # TODO: Make this a server side lookup if a user has more than a 100 users.
+  users(orderBy: { lastName: asc }, first: 100, where: $where) {
+    nodes {
+      id
+      displayName
+    }
+  }
+}

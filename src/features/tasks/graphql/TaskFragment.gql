@@ -1,0 +1,32 @@
+fragment TaskFragment on Task {
+  id
+  status
+  title
+  reference
+  status
+  customer {
+    id
+    name
+    email
+    type
+    address {
+      address
+    }
+  }
+  jobType {
+    id
+    name_en
+  }
+  user {
+    id
+    displayName
+  }
+  startDate
+  endDate
+  expectedHours
+  termsAccepted
+
+  description
+  paymentType
+  paymentAmount
+}

@@ -1,0 +1,33 @@
+fragment CooperationAgreementFragment on CooperationAgreement {
+  id
+  active
+  startDate
+  endDate
+
+  openEnded
+  customerId
+  customer {
+    id
+    name
+  }
+  terminationAgreement
+  taskDescription
+  extraWork
+  extraWorkNotification
+  extraWorkNotificationOther
+  equipmentDetails
+  equipmentSupplied
+  specialConditions
+  paymentType
+  paymentTerm
+  paymentTermOther
+  paymentTermDays
+  paymentTermSpecial
+
+  createdDate
+  updatedDate
+  user {
+    id
+    displayName
+  }
+}

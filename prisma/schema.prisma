@@ -1,0 +1,836 @@
+// Update this line to force rebuild
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model Address {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  active     Boolean @default(true)
+  default    Boolean @default(true)
+  address    String  @db.VarChar(255)
+  city       String  @db.VarChar(255)
+  countryId  BigInt  @map("country_id")
+  country    Country @relation(fields: [countryId], references: [id])
+  region     String? @db.VarChar(255)
+  postalCode String  @map("postal_code") @db.VarChar(20)
+
+  customers Customer[]
+  users     User[]
+
+  @@index([countryId], name: "address_country_id_fk")
+  @@map("address")
+}
+
+enum ReferralStatus {
+  NONE
+  SIGNED_UP
+  SENT_INVOICE
+  PAID_INVOICE
+}
+
+model ServiceLog {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  service    String     @db.VarChar(50)
+  recordId   BigInt     @map("record_id")
+  recordType RecordType @map("record_type")
+  message    String     @db.VarChar(255)
+  status     String     @db.VarChar(50)
+
+  @@map("service_log")
+}
+
+model Referral {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  email   String @db.VarChar(255)
+  message String
+
+  status ReferralStatus @default(NONE)
+
+  @@index([userId], name: "referral_user_id_fk")
+  @@map("referral")
+}
+
+enum RewardType {
+  CREDIT
+}
+
+enum RewardSource {
+  REFERRAL
+}
+
+model Reward {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  type           RewardType
+  value          Int
+  valueRemaining Int          @default(0) @map("value_remaining")
+  source         RewardSource
+  sourceId       BigInt       @map("source_id")
+
+  @@index([userId], name: "reward_user_id_fk")
+  @@map("reward")
+}
+
+enum PaymentType {
+  PER_HOUR
+  FIXED
+}
+
+enum ExtraWorkNotification {
+  WRITTEN_ESTIMATE
+  WRITTEN_FIXED
+  ORAL
+  OTHER
+}
+
+enum PaymentTerm {
+  CURRENT_MONTH_PLUS
+  ONGOING_WEEK_PLUS
+  TASK_END_PLUS
+  OTHER
+}
+
+model CooperationAgreement {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  customerId BigInt   @map("customer_id")
+  customer   Customer @relation(fields: [customerId], references: [id])
+
+  startDate DateTime  @map("start_date") @db.Date
+  endDate   DateTime? @map("end_date") @db.Date
+  openEnded Boolean   @default(false) @map("open_ended")
+
+  terminationAgreement String @map("termination_agreement")
+  taskDescription      String @map("task_description")
+
+  extraWork                  Boolean                @default(false) @map("extra_work")
+  extraWorkNotification      ExtraWorkNotification? @map("extra_work_notification")
+  extraWorkNotificationOther String?                @map("extra_work_notification_other")
+
+  specialConditions  String?     @map("special_conditions")
+  paymentType        PaymentType @map("payment_type")
+  paymentTerm        PaymentTerm @map("payment_term")
+  paymentTermOther   String?     @map("payment_term_other")
+  paymentTermDays    Int         @map("payment_term_days")
+  paymentTermSpecial String?     @map("payment_term_special")
+
+  equipmentSupplied Boolean @map("equipment_supplied")
+  equipmentDetails  String? @map("equipment_details")
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  deliverables CooperationAgreementDeliverable[]
+
+  active Boolean @default(true)
+
+  @@index([customerId], name: "cooperation_agreement_customer_id_fk")
+  @@index([userId], name: "cooperation_agreement_user_id_fk")
+  @@map("cooperation_agreement")
+}
+
+model CooperationAgreementDeliverable {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  cooperationAgreementId BigInt               @map("cooperation_agreement_id")
+  cooperationAgreement   CooperationAgreement @relation(fields: [cooperationAgreementId], references: [id])
+
+  description String
+
+  @@index([cooperationAgreementId], name: "cooperation_agreement_deliverable_cooperation_agreement_id_fk")
+  @@map("cooperation_agreement_deliverable")
+}
+
+model Country {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @updatedAt @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  code    String @unique @db.VarChar(10)
+  name_en String @map("name_en") @db.VarChar(255)
+  name_da String @map("name_da") @db.VarChar(255)
+
+  active    Boolean   @default(true)
+  addresses Address[]
+  taxInfo   TaxInfo[]
+
+  Invoice Invoice[]
+
+  @@map("country")
+}
+
+model Experiment {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @updatedAt @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  experimentId String @map("experiment_id")
+  variationId  Int    @map("variation_id")
+  featureId    String @map("feature_id")
+  value        String
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@map("experiment")
+}
+
+model Company {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  name              String     @db.VarChar(255)
+  vatId             String?    @map("vat_id") @db.VarChar(50)
+  allowEarlyPayment Boolean    @default(false) @map("allow_early_payment")
+  customer          Customer[]
+
+  @@map("company")
+}
+
+model Customer {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  active  Boolean      @default(true)
+  type    CustomerType
+  contact String       @db.VarChar(255)
+  vatId   String?      @db.VarChar(50)
+  ean     BigInt?
+  email   String       @db.VarChar(255)
+
+  economicCustomerId Int? @map("e_conomic_customer_id")
+
+  name           String     @db.VarChar(255)
+  paymentDueDays Int?       @map("payment_due_days")
+  phoneNumber    String     @map("phone_number") @db.VarChar(255)
+  companyId      BigInt?    @map("company_id")
+  company        Company?   @relation(fields: [companyId], references: [id])
+  userId         BigInt     @map("user_id")
+  user           User       @relation(fields: [userId], references: [id])
+  tasks          Task[]
+  invoices       Invoice[]  @relation(name: "CustomerRelation")
+  parentId       BigInt?    @map("parent_id")
+  parent         Customer?  @relation(name: "CustomerToCustomer", fields: [parentId], references: [id])
+  customers      Customer[] @relation(name: "CustomerToCustomer")
+
+  addresses            Address[]
+  CooperationAgreement CooperationAgreement[]
+
+  @@index([parentId], name: "customer_parent_id_fk")
+  @@index([userId], name: "customer_user_id_fk")
+  @@map("customer")
+}
+
+enum CustomerType {
+  BUSINESS
+  PRIVATE
+}
+
+enum DiscountType {
+  NONE
+  FIXED
+  PERCENTAGE
+}
+
+model Invoice {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @updatedAt @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  active          Boolean @default(true)
+  vacationPayment Boolean @default(true) @map("vacation_payment")
+  currency        String  @db.VarChar(10)
+
+  customerId BigInt   @map("customer_id")
+  customer   Customer @relation(name: "CustomerRelation", fields: [customerId], references: [id])
+
+  visibleId BigInt @map("visible_id") // this is the id that the user sees instead of the invoice id.
+
+  customerVatId       String? @map("customer_vat_id") @db.VarChar(50)
+  customerEan         String? @map("customer_ean") @db.VarChar(255)
+  customerName        String  @map("customer_name") @db.VarChar(255)
+  customerAddress     String  @map("customer_address") @db.VarChar(255)
+  customerCity        String  @map("customer_city") @db.VarChar(255)
+  customerPostalCode  String  @map("customer_postal_code") @db.VarChar(20)
+  customerContact     String  @map("customer_contact") @db.VarChar(255)
+  customerEmail       String  @map("customer_email") @db.VarChar(255)
+  customerPhoneNumber String  @map("customer_phone_number") @db.VarChar(255)
+  customerCountryId   BigInt  @map("customer_country_id")
+
+  sendInvoiceCopyTo String? @map("send_invoice_copy_to") @db.VarChar(255)
+
+  economicInvoiceId Int? @map("e_conomic_invoice_id")
+
+  endDate        DateTime? @map("end_date") @db.Date
+  hoursWorked    Int       @map("hours_worked")
+  note           String?
+  invoiceDate    DateTime  @map("invoice_date") @db.Date
+  paymentDueDays Int       @map("payment_due_days")
+  reference      String?   @db.VarChar(255)
+
+  total                  Float     @default(0)
+  subtotal               Float     @default(0)
+  subtotalDkk            Float?    @map("subtotal_dkk")
+  paidAmountDkk          Float?    @map("paid_amount_dkk")
+  feeAmountDkk           Float?    @map("fee_amount_dkk")
+  discountedFeeAmountDkk Float?    @map("discounted_fee_amount_dkk")
+  conversionRate         Float?    @map("conversion_rate")
+  conversionDate         DateTime? @map("conversion_date") @db.Date
+
+  startDate       DateTime?     @map("start_date") @db.Date
+  status          InvoiceStatus
+  taskId          BigInt?       @map("task_id")
+  task            Task?         @relation(fields: [taskId], references: [id])
+  salaryId        BigInt?       @map("salary_id")
+  salary          Salary?       @relation(fields: [salaryId], references: [id])
+  jobTypeId       BigInt?       @map("job_type_id")
+  jobType         JobType?      @relation(fields: [jobTypeId], references: [id])
+  customerCountry Country?      @relation(fields: [customerCountryId], references: [id])
+  termsAccepted   Boolean       @default(false) @map("terms_accepted")
+  userId          BigInt        @map("user_id")
+  user            User          @relation(fields: [userId], references: [id])
+  includeVat      Boolean       @default(true) @map("include_vat")
+  lines           InvoiceLine[]
+
+  earlyPayment Boolean @default(false) @map("early_payment")
+
+  creditsUsed      Int          @default(0) @map("credits_used")
+  discountType     DiscountType @default(NONE) @map("discount_type")
+  discountValue    Decimal      @default(0) @map("discount_value")
+  discountMaxValue Decimal      @default(0) @map("discount_max_value")
+
+  @@index([customerId], name: "invoice_customer_id_fk")
+  @@index([taskId], name: "invoice_task_id_fk")
+  @@index([userId], name: "invoice_user_id_fk")
+  @@map("invoice")
+}
+
+model InvoiceLine {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  description        String   @db.VarChar(255)
+  invoiceId          BigInt   @map("invoice_id")
+  invoice            Invoice  @relation(fields: [invoiceId], references: [id])
+  unitPrice          Float
+  quantity           Float
+  index              Int
+  unit               String?  @db.VarChar(10)
+  discountPercentage Float    @default(0) @map("discount_percentage")
+  productId          BigInt?  @map("product_id")
+  product            Product? @relation(fields: [productId], references: [id])
+  active             Boolean  @default(true)
+
+  @@index([invoiceId], name: "invoice_line_invoice_id_fk")
+  @@index([productId], name: "invoice_line_product_id_fk")
+  @@map("invoice_line")
+}
+
+enum SalaryStatus {
+  DRAFT
+  SENT
+  PAID
+}
+
+model Salary {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  paymentDate              DateTime     @map("payment_date") @db.Date
+  startDate                DateTime?    @map("start_date") @db.Date
+  endDate                  DateTime?    @map("end_date") @db.Date
+  status                   SalaryStatus @default(DRAFT)
+  zenegyPayrollUid         String?      @map("zenegy_payroll_uid") @db.VarChar(40)
+  zenegyEmployeePayrollUid String?      @map("zenegy_employee_payroll_uid") @db.VarChar(40)
+  economicFeeInvoiceId     Int?         @map("economic_fee_invoice_id")
+
+  grossIncome   Decimal? @map("gross_income")
+  paymentAmount Decimal? @map("payment_amount")
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  invoices   Invoice[]
+  deductions Deduction[]
+
+  @@index([userId], name: "salary_user_id_fk")
+  @@map("salary")
+}
+
+model Notification {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid())
+
+  seen         Boolean @default(false)
+  templateId   String  @db.VarChar(10)
+  templateData Json
+  userId       BigInt? @map("user_id")
+  user         User?   @relation(fields: [userId], references: [id])
+  role         Role?
+  mails        Mail[]
+
+  @@index([userId], name: "notification_user_id_fk")
+  @@map("notification")
+}
+
+model Mail {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid())
+
+  externalId     String?       @db.VarChar(10)
+  sent           Boolean       @default(false)
+  templateId     String        @db.VarChar(10)
+  templateData   Json
+  to             String        @db.VarChar(255)
+  cc             String?       @db.VarChar(255)
+  notificationId BigInt?
+  notification   Notification? @relation(fields: [notificationId], references: [id])
+
+  @@index([notificationId], name: "mail_notification_id_fk")
+  @@map("mail")
+}
+
+model Product {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  description String        @db.VarChar(255)
+  unitPrice   Float
+  unit        String        @db.VarChar(255)
+  userId      BigInt        @map("user_id")
+  user        User          @relation(fields: [userId], references: [id])
+  active      Boolean       @default(true)
+  InvoiceLine InvoiceLine[]
+
+  @@index([userId], name: "product_user_id_fk")
+  @@map("product")
+}
+
+model JobType {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  name_en String  @map("name_en") @db.VarChar(255)
+  name_da String  @map("name_da") @db.VarChar(255)
+  active  Boolean @default(true)
+
+  tasks    Task[]
+  invoices Invoice[]
+  users    User[]
+
+  @@map("job_type")
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PENDING
+  MORE_INFO_NEEDED
+  SENT_TO_COMPANY
+  SENT_TO_COMPANY_NEEDS_CONTRACT
+  SENT_TO_COMPANY_CONTRACT_MADE
+  SENT_TO_COMPANY_AWAITING_APPROVAL
+  APPROVED_BY_COMPANY
+  LATE_PAYMENT
+  DEBT_COLLECTION
+  COMPANY_DISPUTE
+  PAID
+  PAYMENT_RECEIVED
+  PAYMENT_ON_HOLD
+  CANCELLED
+  DENIED_BY_COMPANY
+  SALARY_PAID
+  SALARY_PAID_CUSTOMER_PAID
+  SALARY_PAID_CUSTOMER_NOT_PAID
+}
+
+enum TaskStatus {
+  DRAFT
+  SENT
+  PENDING
+  MORE_INFO_NEEDED
+  DENIED
+  APPROVED
+}
+
+enum DeductionStatus {
+  DRAFT
+  SENT
+  APPROVED
+  DECLINED
+  DELETED_BY_USER
+}
+
+enum RecordType {
+  TASK
+  INVOICE
+  USER
+  DEDUCTION
+  CUSTOMER
+  INVOICE_LINE
+  COOPERATION_AGREEMENT
+  REWARD
+  REFERRAL
+  SALARY
+  COMPANY
+}
+
+model Audit {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  userId       BigInt?    @map("user_id")
+  user         User?      @relation(name: "AuditUserRelation", fields: [userId], references: [id])
+  recordId     BigInt     @map("record_id")
+  recordType   RecordType @map("record_type")
+  event        String     @db.VarChar(255)
+  value        Json?
+  updatedValue Json?      @map("updated_value")
+
+  @@index([userId], name: "audit_user_id_fk")
+  @@index([recordId, recordType], name: "audit_record_id_type_ik")
+  @@map("audit")
+}
+
+model ExchangeRate {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  sourceCurrency String    @map("source_currency") @db.VarChar(3)
+  targetCurrency String    @map("target_currency") @db.VarChar(3)
+  exchangeRate   Decimal   @map("exchange_rate")
+  validFromDate  DateTime  @map("valid_from_date") @db.Date
+  validToDate    DateTime? @map("valid_to_date") @db.Date
+
+  @@unique([sourceCurrency, targetCurrency, validFromDate], map: "index_exchange_rate_uniqueness")
+  @@map("exchange_rate")
+}
+
+enum TaskPaymentType {
+  PER_HOUR
+  PROJECT_PRICE
+}
+
+model Task {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  active        Boolean    @default(true)
+  customerId    BigInt     @map("customer_id")
+  customer      Customer   @relation(fields: [customerId], references: [id])
+  endDate       DateTime   @map("end_date") @db.Date
+  expectedHours Int        @map("expected_hours")
+  jobTypeId     BigInt     @map("job_type_id")
+  jobType       JobType    @relation(fields: [jobTypeId], references: [id])
+  reference     String?    @db.VarChar(255)
+  startDate     DateTime   @map("start_date") @db.Date
+  status        TaskStatus
+  termsAccepted Boolean    @default(false) @map("terms_accepted")
+  title         String     @db.VarChar(255)
+  userId        BigInt     @map("user_id")
+  user          User       @relation(fields: [userId], references: [id])
+  invoices      Invoice[]
+
+  description   String?
+  paymentType   TaskPaymentType? @map("payment_type")
+  paymentAmount Decimal?         @map("payment_amount")
+
+  @@index([customerId], name: "task_customer_id_fk")
+  @@index([userId], name: "task_user_id_fk")
+  @@index([jobTypeId], name: "task_job_type_id_fk")
+  @@map("task")
+}
+
+model Deduction {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  status      DeductionStatus
+  description String?         @db.VarChar(255)
+  active      Boolean         @default(true)
+
+  currency       String?   @db.VarChar(10)
+  total          Float?    @default(0)
+  totalDkk       Float?    @map("total_dkk")
+  conversionRate Float?    @map("conversion_rate")
+  conversionDate DateTime? @map("conversion_date") @db.Date
+  includeVat     Boolean   @default(false) @map("include_vat")
+
+  salaryId BigInt? @map("salary_id")
+  salary   Salary? @relation(fields: [salaryId], references: [id])
+  userId   BigInt  @map("user_id")
+  user     User    @relation("UserDeductionsRelation", fields: [userId], references: [id])
+
+  @@index([userId], name: "deduction_user_id_fk")
+  @@map("deduction")
+}
+
+enum Role {
+  USER
+  EMPLOYEE
+  ADMIN
+}
+
+enum Language {
+  DA
+  EN
+}
+
+enum SalaryPaymentType {
+  EARLY
+  ON_PAYMENT
+  TIMED
+  VALUE
+  VIA_INVOICE
+}
+
+model User {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  firstName             String?   @map("first_name") @db.VarChar(255)
+  lastName              String?   @map("last_name") @db.VarChar(255)
+  phoneNumber           String?   @map("phone_number") @db.VarChar(255)
+  email                 String    @unique @db.VarChar(255)
+  role                  Role      @default(USER)
+  referral              String?   @db.VarChar(255)
+  userSpecifiedReferral String?   @map("user_specified_referral") @db.VarChar(255)
+  freelancerSituation   String?   @map("freelancer_situation") @db.VarChar(255)
+  lastActive            DateTime? @map("last_active")
+  loginCount            Int       @default(0) @map("login_count")
+  conversionTracked     Boolean   @default(false) @map("conversion_tracked")
+
+  active        Boolean @default(true)
+  emailVerified Boolean @default(false) @map("email_verified")
+  mailchimpTags String? @map("mailchimp_tags")
+
+  economicCustomerGroupId Int?    @map("e_conomic_customer_group_id")
+  economicCustomerId      Int?    @map("e_conomic_customer_id")
+  economicEmployeeId      Int?    @map("e_conomic_employee_id")
+  zenegyEmployeeUid       String? @map("zenegy_employee_uid") @db.VarChar(40)
+
+  salaryPaymentType  SalaryPaymentType? @map("salary_payment_type")
+  salaryPaymentDay   Int?               @map("salary_payment_day")
+  salaryPaymentValue Int?               @map("salary_payment_value")
+  baseRate           Decimal?           @map("base_rate")
+
+  locale    String   @db.VarChar(10)
+  language  Language
+  jobTypeId BigInt?  @map("job_type_id")
+  jobType   JobType? @relation(fields: [jobTypeId], references: [id])
+  unit      String?  @default("PCS.") @db.VarChar(10)
+  currency  String?  @default("DKK") @db.VarChar(10)
+
+  referralLinkCode String? @map("referral_link_code") @db.VarChar(10)
+  referredByUserId BigInt? @map("referred_by_user_id")
+  referredByUser   User?   @relation("ReferredUsers", fields: [referredByUserId], references: [id])
+
+  nextInvoiceId BigInt @default(0) @map("next_invoice_id")
+
+  accountSetupComplete Boolean @default(false) @map("account_setup_complete")
+
+  vacationPayment Boolean @default(true) @map("vacation_payment")
+
+  invoices       Invoice[]
+  tasks          Task[]
+  customers      Customer[]
+  bankAccounts   BankAccount[]
+  userActions    UserAction[]
+  statusLogs     Audit[]         @relation(name: "AuditUserRelation")
+  notifications  Notification[]
+  products       Product[]
+  userEmailCodes UserEmailCode[]
+
+  addresses  Address[]
+  deductions Deduction[] @relation(name: "UserDeductionsRelation")
+
+  taxInfo              TaxInfo[]
+  CooperationAgreement CooperationAgreement[]
+  referrals            Referral[]
+  rewards              Reward[]
+  referredUsers        User[]                 @relation("ReferredUsers")
+  experiments          Experiment[]
+  salaries             Salary[]
+
+  @@index([jobTypeId], name: "user_job_type_id_fk")
+  @@index([email], name: "email")
+  @@map("user")
+}
+
+model UserEmailCode {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  code     String   @db.VarChar(255)
+  newEmail String   @map("new_email") @db.VarChar(255)
+  expire   DateTime
+  userId   BigInt   @map("user_id")
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@index([userId], name: "user_email_code_user_id_fk")
+  @@map("user_email_code")
+}
+
+model UserAction {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid()) @db.VarChar(40)
+
+  action    String   @db.VarChar(255)
+  triggered DateTime @default(now())
+  userId    BigInt   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([userId], name: "user_action_user_id_fk")
+  @@map("user_action")
+}
+
+enum EncryptionMethod {
+  RAILS_V2
+}
+
+model BankAccount {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+
+  active           Boolean
+  default          Boolean
+  encryptionMethod EncryptionMethod @default(RAILS_V2) @map("encryption_method")
+  bankAccount      String?          @map("bank_account") @db.VarChar(255)
+  bankName         String?          @map("bank_name") @db.VarChar(255)
+  bankRegistration String?          @map("bank_registration") @db.VarChar(255)
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@map("bank_account")
+}
+
+enum TaxCard {
+  MAIN
+  SECONDARY
+}
+
+model TaxInfo {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+
+  active    Boolean
+  countryId BigInt  @map("country_id")
+  country   Country @relation(fields: [countryId], references: [id])
+
+  encryptionMethod EncryptionMethod @default(RAILS_V2)
+  personId         String?          @map("person_id") @db.VarChar(255)
+  taxCard          TaxCard?         @map("tax_card")
+
+  userId BigInt @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@index([countryId], name: "tax_info_country_id_fk")
+  @@map("tax_info")
+}
+
+model Attachment {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid())
+
+  name       String @db.VarChar(255)
+  recordType String @map("record_type") @db.VarChar(255)
+  recordId   BigInt @map("record_id")
+  blobId     BigInt @map("blob_id")
+
+  attachmentBlob AttachmentBlob @relation(fields: [blobId], references: [id])
+
+  @@unique([recordType, recordId, name, blobId], map: "index_attachment_uniqueness")
+  @@index([blobId], map: "index_active_storage_attachments_on_blob_id")
+  @@map("attachment")
+}
+
+model AttachmentBlob {
+  id          BigInt   @id @default(autoincrement())
+  createdDate DateTime @default(now()) @map("created_date")
+  updatedDate DateTime @default(now()) @map("updated_date")
+  uuid        String   @default(uuid())
+
+  key         String  @unique(map: "index_attachment_blob_on_key") @db.VarChar(255)
+  filename    String  @db.VarChar(255)
+  contentType String? @map("content_type") @db.VarChar(255)
+  metadata    String? @db.Text
+  serviceName String  @map("service_name") @db.VarChar(255)
+  bucketName  String? @map("bucket_name") @db.VarChar(255)
+  byteSize    BigInt  @map("byte_size")
+  checksum    String? @db.VarChar(255)
+
+  attachment Attachment[]
+
+  @@map("attachment_blob")
+}

@@ -1,0 +1,8 @@
+query SelectCustomerQuery($where: WhereUniqueInputArgs!) {
+  customer(where: $where) {
+    contact
+    paymentDueDays
+    email
+    allowEarlyPayment
+  }
+}

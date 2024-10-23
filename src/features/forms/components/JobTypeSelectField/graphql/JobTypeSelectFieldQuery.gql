@@ -1,0 +1,7 @@
+query JobTypeSelectFieldQuery {
+  jobTypes(orderBy: { name_en: asc }) {
+    id
+    name_en
+    name_da
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "headers": {
+    "create": "Opret kunde",
+    "contactDetails": "Kontaktoplysninger",
+    "contactPerson": "Kontaktperson",
+    "address": "Adresseoplysninger",
+    "payment": "Betalingsoplysninger",
+    "search": "Kunder",
+    "openInvoices": "Åbne fakturaer",
+    "openTasks": "Åbne opgaver",
+    "contact": "Kontakt",
+    "details": "Kunde detaljer",
+    "edit": "Rediger kunde"
+  },
+  "labels": {
+    "name": "Navn",
+    "companyName": "Virksomhedsnavn",
+    "email": "Email",
+    "phoneNumber": "Telefon",
+
+    "address": "Adresse",
+    "city": "By",
+    "country": "Land",
+    "postalCode": "Postnummer",
+
+    "type": "Kundetype",
+    "types": {
+      "business": "Erhverv",
+      "private": "Privat"
+    },
+
+    "paymentDueDays": "Betalingsdage",
+    "vatId": {
+      "dk": "CVR / Registreringsnummer",
+      "other": "Organisation eller registrering nummer"
+    },
+    "ean": "EAN Nummer",
+    "user": "Bruger",
+
+    "addressLookup": {
+      "vatId": {
+        "dk": "CVR"
+      }
+    },
+    "economicCustomerId": "E-conomic ID",
+    "allowEarlyPayment": "Tillade tidlig betaling "
+  },
+  "placeholders": {
+    "addressLookup": "Find virksomheden ud fra CVR nummer eller navn"
+  },
+  "descriptions": {
+    "paymentDueDays": "Standard antal betalings dage. Kan også ændres pr faktura.",
+    "ean": "Kundens EAN nummer bruges til e-faktura. Udfyld kun hvis din kunde har oplyst EAN. Ellers efterlad feltet tomt.",
+    "address": {
+      "business": "Virksomhedens navn og nummer",
+      "private": "Kundens navn og nummer"
+    }
+  },
+  "buttons": {
+    "create": "Opret kunde",
+    "update": "Opdater kunde"
+  },
+  "messages": {
+    "updated": "Kunde opdateret",
+    "created": "Kunde oprettet",
+    "addressLookup": { "noResults": "Vi kunne ikke finde nogle resultater, der matcher din søgning" },
+    "createAs": "Du opretter denne kunde som {{- displayName}}",
+    "validEANLength": "EAN skal være nøjagtigt 13 tegn"
+  },
+  "errors": {
+    "create": "Fejl ved oprettelse af kunde",
+    "update": "Fejl ved opdatering af kunde",
+    "addressLookup": "Vi kunne ikke finde nogle resultater, der matcher din søgning"
+  }
+}

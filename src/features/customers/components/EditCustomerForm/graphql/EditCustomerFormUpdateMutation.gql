@@ -1,0 +1,7 @@
+#import "../../../graphql/CustomerFragment.gql"
+
+mutation EditCustomerFormUpdateMutation($input: CustomerUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateCustomer(data: $input, where: $where) {
+    ...CustomerFragment
+  }
+}

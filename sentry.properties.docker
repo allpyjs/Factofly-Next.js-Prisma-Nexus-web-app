@@ -1,0 +1,4 @@
+defaults.url=https://sentry.io/
+defaults.org=factofly
+defaults.project=factofly-web-app
+cli.executable=/usr/local/bin/sentry-cli

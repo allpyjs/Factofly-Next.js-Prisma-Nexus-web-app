@@ -1,0 +1,7 @@
+#import "../../../graphql/DeductionFragment.gql"
+
+mutation DeleteDeductionMutation($where: WhereUniqueInputArgs!) {
+  updateDeduction(data: { active: false }, where: $where) {
+    ...DeductionFragment
+  }
+}

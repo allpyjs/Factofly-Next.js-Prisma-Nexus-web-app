@@ -1,0 +1,6 @@
+mutation SendInvoiceMutation($where: WhereUniqueInputArgs!) {
+  sendInvoice(where: $where) {
+    id
+    success
+  }
+}

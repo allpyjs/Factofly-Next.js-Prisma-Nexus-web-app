@@ -1,0 +1,72 @@
+fragment InvoiceFragment on Invoice {
+  id
+  visibleId
+  status
+  reference
+  note
+  createdDate
+  updatedDate
+  currency
+  includeVat
+  overdue
+  dueDate
+  vacationPayment
+  earlyPayment
+  paymentDueDays
+  hoursWorked
+  economicInvoiceId
+  customerContact
+  customerEmail
+  customerAddress
+  customerCity
+  customerPostalCode
+  sendInvoiceCopyTo
+  creditsUsed
+  discountType
+  discountValue
+  discountMaxValue
+  user {
+    id
+    displayName
+  }
+  customer {
+    id
+    name
+    email
+    type
+    address {
+      address
+      city
+      postalCode
+    }
+  }
+  jobType {
+    id
+    name_en
+    name_da
+  }
+  invoiceDate
+  startDate
+  endDate
+  termsAccepted
+  taskId
+  task {
+    id
+    title
+  }
+  totalPrice
+  totalPriceWithVat
+  paidAmountDkk
+  vatAmount
+  vatPercentage
+  lines {
+    id
+    description
+    unit
+    quantity
+    unitPrice
+    index
+    discountPercentage
+    totalPrice
+  }
+}

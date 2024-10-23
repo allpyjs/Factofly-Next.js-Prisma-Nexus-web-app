@@ -1,0 +1,7 @@
+mutation UpdateSalaryMutation($input: SalaryUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateSalary(data: $input, where: $where) {
+    createdDate
+    updatedDate
+    paymentDate
+  }
+}

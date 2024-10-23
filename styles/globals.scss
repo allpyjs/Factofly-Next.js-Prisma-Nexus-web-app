@@ -1,0 +1,121 @@
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.leftside-menu .logo svg * {
+  fill: #fff;
+}
+
+.form-text.text-muted {
+  display: inline-block;
+}
+
+.footer {
+  position: static;
+}
+
+.form-label {
+  margin-bottom: 3px;
+}
+
+.btn i {
+  margin-right: 5px;
+}
+
+h4 i {
+  margin-right: 5px;
+}
+
+.container-sm {
+  max-width: 960px;
+}
+$background-primary: #2d65d4;
+$background-primary-accent: #3d67b9;
+
+a {
+  color: $background-primary;
+}
+
+.leftside-menu {
+  background: linear-gradient(135deg, $background-primary 0%, $background-primary-accent 40%);
+}
+
+.leftside-menu .side-nav .side-nav-link {
+  color: #f5fafd;
+}
+.leftside-menu .side-nav .side-nav-link:hover {
+  color: #cedce4;
+}
+
+.btn-primary {
+  background-color: $background-primary;
+  border-color: $background-primary-accent;
+}
+.btn-primary:hover {
+  background-color: $background-primary-accent;
+}
+
+.btn-primary:disabled,
+.btn-primary:disabled {
+  background-color: $background-primary;
+  border-color: $background-primary-accent;
+}
+
+.btn-check:checked + .btn-primary,
+.btn-check:active + .btn-primary,
+.btn-primary:active,
+.btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: $background-primary;
+  border-color: $background-primary-accent;
+}
+
+.text-primary {
+  color: $background-primary !important;
+}
+
+.progress-bar {
+  background-color: $background-primary;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: $background-primary;
+  border-color: $background-primary-accent;
+}
+
+.badge.bg-primary,
+.progress-bar.bg-primary {
+  background-color: $background-primary !important;
+}
+
+.form-check-input:checked {
+  background-color: $background-primary;
+  border-color: $background-primary;
+}
+
+.mr-2 {
+  margin-right: 10px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+span.badge {
+  font-size: 12px;
+  padding: 5px 6px;
+}
+
+@import './Alert.scss';
+@import './DataTable.scss';
+@import './DatePicker.scss';
+@import './Calendar.scss';

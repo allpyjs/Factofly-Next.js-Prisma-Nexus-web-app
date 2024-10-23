@@ -1,0 +1,6 @@
+mutation UpdateInvoiceStatusMutation($data: InvoiceUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateInvoice(data: $data, where: $where) {
+    id
+    status
+  }
+}

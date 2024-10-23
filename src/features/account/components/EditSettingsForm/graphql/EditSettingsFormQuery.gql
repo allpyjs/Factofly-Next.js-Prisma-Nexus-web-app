@@ -1,0 +1,7 @@
+#import "../../../graphql/UserSettingsFragment.gql"
+
+query EditSettingsFormQuery {
+  me {
+    ...UserSettingsFragment
+  }
+}

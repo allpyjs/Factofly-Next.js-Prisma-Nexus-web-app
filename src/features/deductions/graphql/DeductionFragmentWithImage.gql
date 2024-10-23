@@ -1,0 +1,13 @@
+fragment DeductionFragmentWithImage on Deduction {
+  id
+  status
+  active
+  description
+  createdDate
+  updatedDate
+  total
+  totalDkk
+  includeVat
+  currency
+  imageUrl
+}

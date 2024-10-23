@@ -1,0 +1,9 @@
+query CustomerColumnFilterQuery($where: CustomerWhereInputArgs) {
+  # TODO: Make this a server side lookup if a user has more than a 100 customers.
+  customers(orderBy: { name: asc }, first: 20, where: $where) {
+    nodes {
+      id
+      name
+    }
+  }
+}

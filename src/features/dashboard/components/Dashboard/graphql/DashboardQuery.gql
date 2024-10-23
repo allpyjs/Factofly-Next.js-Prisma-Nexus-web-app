@@ -1,0 +1,20 @@
+query DashboardQuery {
+  dashboard {
+    draft {
+      count
+      amount
+    }
+    open {
+      count
+      amount
+    }
+    paidOut {
+      count
+      amount
+    }
+    expired {
+      count
+      amount
+    }
+  }
+}

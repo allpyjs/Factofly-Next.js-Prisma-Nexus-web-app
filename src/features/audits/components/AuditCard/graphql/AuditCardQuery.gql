@@ -1,0 +1,17 @@
+query AuditCardQuery($first: Int!, $where: AuditWhereInputArgs, $orderBy: AuditOrderByInputArgs) {
+  audits(first: $first, where: $where, orderBy: $orderBy) {
+    nodes {
+      id
+      createdDate
+      userId
+      user {
+        displayName
+      }
+      recordId
+      recordType
+      event
+      value
+      updatedValue
+    }
+  }
+}

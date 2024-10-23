@@ -1,0 +1,13 @@
+query ServiceLogCardQuery($first: Int!, $where: ServiceLogWhereInputArgs, $orderBy: ServiceLogOrderByInputArgs) {
+  serviceLogs(first: $first, where: $where, orderBy: $orderBy) {
+    nodes {
+      id
+      createdDate
+      recordId
+      recordType
+      service
+      status
+      message
+    }
+  }
+}

@@ -1,0 +1,23 @@
+#import "../../../graphql/DeductionFragment.gql"
+
+fragment DeductionListItem on Query {
+  items: deductions(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "DeductionList_user_items") {
+    totalCount
+    edges {
+      node {
+        ...DeductionFragment
+      }
+    }
+  }
+}
+
+query DeductionsTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: DeductionWhereInputArgs
+  $orderBy: DeductionOrderByInputArgs
+) {
+  ...DeductionListItem
+}

@@ -1,0 +1,84 @@
+{
+  "task": "Task",
+  "headers": {
+    "search": "Tasks",
+    "details": "Task details",
+    "edit": "Edit task",
+    "customer": "Customer",
+    "taskInformation": "Task information",
+    "execution": "Execution",
+    "status": "Task status",
+    "create": "Create task"
+  },
+  "labels": {
+    "title": "Title",
+    "customer": "Customer",
+    "customerName": "Name",
+    "customerEmail": "Customer email",
+    "customerType": "Type",
+    "customerAddress": "Address",
+    "status": "Status",
+    "reference": "Customer reference",
+    "jobType": "Job Type",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "expectedHours": "Number of hours",
+    "user": "User",
+    "termsAccepted": "Terms accepted",
+    "description": "Job description",
+    "paymentType": "Payment type",
+    "paymentAmount": "Payment amount"
+  },
+  "descriptions": {
+    "reference": "Write a reference if the customer requires this. Leave the field blank otherwise.",
+    "description": "Describe the work you will be doing"
+  },
+  "buttons": {
+    "create": "Create task",
+    "createInvoice": "Create invoice",
+    "submit": "Submit task",
+    "update": "Update task",
+    "edit": "Edit",
+    "saveAsDraft": "Save as draft",
+    "downloadContract": "Download Contract"
+  },
+  "terms": "When creating the task, I confirm the general terms and conditions and that the information entered is correct and that in connection with the performance of this task I am employed by FactoFly who supervises and has the authority to instruct in connection with the employment.",
+  "statuses": {
+    "APPROVED": "Approved",
+    "DENIED": "Denied",
+    "DRAFT": "Draft",
+    "MORE_INFO_NEEDED": "More Info Needed",
+    "PENDING": "Pending",
+    "SENT": "Sent",
+
+    "CANCELLED": "Cancelled",
+    "COMPANY_DISPUTE": "Company Dispute",
+    "DEBT_COLLECTION": "Debt Collection",
+    "DENIED_BY_COMPANY": "Denied by Company",
+    "LATE_PAYMENT": "Late Payment",
+    "PAID": "Paid",
+    "SALARY_PAID": "Salary Paid",
+    "SENT_TO_COMPANY": "Sent to Company"
+  },
+  "taskPaymentTypes": {
+    "PER_HOUR": "Per hour",
+    "PROJECT_PRICE": "Project price",
+    "NULL": "None"
+  },
+  "messages": {
+    "updated": "Task updated",
+    "created": "Task created",
+    "updatedStatus": "Task status updated",
+    "readOnly": "This task is marked as \"{{status}}\" and cannot be edited.",
+    "createAs": "You are creating this task as {{- displayName}}"
+  },
+  "validation": {
+    "termsAccepted": "You must accept the terms and conditions"
+  },
+  "errors": {
+    "create": "Error creating task",
+    "update": "Error updating task",
+    "updateStatus": "Error updating task status",
+    "copy": "There was an error copying the original invoice."
+  }
+}

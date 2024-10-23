@@ -1,0 +1,7 @@
+#import "../../../graphql/CooperationAgreementFragment.gql"
+
+mutation CreateCooperationAgreementFormMutation($input: CooperationAgreementCreateInputArgs!) {
+  createCooperationAgreement(data: $input) {
+    ...CooperationAgreementFragment
+  }
+}

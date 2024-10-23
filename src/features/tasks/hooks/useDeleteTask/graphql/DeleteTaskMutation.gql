@@ -1,0 +1,7 @@
+#import "../../../graphql/TaskFragment.gql"
+
+mutation DeleteTaskMutation($where: WhereUniqueInputArgs!) {
+  updateTask(data: { active: false }, where: $where) {
+    ...TaskFragment
+  }
+}

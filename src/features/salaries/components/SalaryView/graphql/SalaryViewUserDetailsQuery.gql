@@ -1,0 +1,76 @@
+query SalaryViewUserDetailsQuery($where: WhereUniqueInputArgs!) {
+  user(where: $where) {
+    id
+    firstName
+    lastName
+    displayName
+    email
+    phoneNumber
+    unit
+    currency
+    language
+    createdDate
+    updatedDate
+    referral
+
+    salaryPaymentType
+    salaryPaymentDay
+    salaryPaymentValue
+    baseRate
+
+    vacationPayment
+
+    jobType {
+      id
+      name_en
+    }
+
+    bankAccount {
+      bankName
+      bankAccount
+      bankRegistration
+    }
+
+    bankAccountHidden {
+      bankName
+      bankAccount
+      bankRegistration
+    }
+
+    taxInfo {
+      personId
+      taxCard
+      countryId
+    }
+
+    taxInfoHidden {
+      personId
+      taxCard
+      countryId
+    }
+
+    bankAccountHidden {
+      bankName
+      bankAccount
+      bankRegistration
+    }
+
+    taxInfoHidden {
+      personId
+      taxCard
+      countryId
+    }
+
+    address {
+      id
+      address
+      city
+      postalCode
+      countryId
+      country {
+        id
+        name_en
+      }
+    }
+  }
+}

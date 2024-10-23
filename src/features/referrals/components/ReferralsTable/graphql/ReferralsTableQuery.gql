@@ -1,0 +1,19 @@
+#import "../../../graphql/ReferralFragment.gql"
+
+query ReferralsTableQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: ReferralWhereInputArgs
+  $orderBy: ReferralOrderByInputArgs
+) {
+  items: referrals(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "ReferralList") {
+    totalCount
+    edges {
+      node {
+        ...ReferralFragment
+      }
+    }
+  }
+}

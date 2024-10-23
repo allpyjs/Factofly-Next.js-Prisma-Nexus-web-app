@@ -1,0 +1,39 @@
+fragment UserSettingsFragment on User {
+  id
+  firstName
+  lastName
+  displayName
+  email
+  unit
+  currency
+  language
+  phoneNumber
+  userSpecifiedReferral
+  freelancerSituation
+  vacationPayment
+
+  jobType {
+    id
+    name_en
+  }
+
+  bankAccountHidden {
+    bankName
+    bankAccount
+    bankRegistration
+  }
+
+  taxInfoHidden {
+    personId
+    taxCard
+    countryId
+  }
+
+  address {
+    id
+    address
+    city
+    postalCode
+    countryId
+  }
+}

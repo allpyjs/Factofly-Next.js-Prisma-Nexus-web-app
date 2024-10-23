@@ -1,0 +1,57 @@
+{
+  "deduction": "Fradrag",
+  "headers": {
+    "create": "Opret fradrag",
+    "search": "Fradrag",
+    "status": "Fradrag status",
+    "edit": "Rediger fradrag",
+    "details": "Fradrag detaljer",
+    "openDeductions": "Åbne fradrag"
+  },
+  "labels": {
+    "description": "Beskrivelse",
+    "status": "Status",
+    "createdDate": "Oprettet",
+    "imageFile": "Bilag",
+    "user": "Bruger",
+    "currency": "Valuta",
+    "total": "Totalt",
+    "includeVat": "Inklusiv moms"
+  },
+  "descriptions": {
+    "total": "Dette skal være det samlede betalte beløb inklusive eventuel moms"
+  },
+  "buttons": {
+    "submit": "Opret fradrag",
+    "update": "Opdater fradrag",
+    "edit": "Rediger",
+    "delete": "Slet",
+    "approveAll": "Godkende alle",
+    "approveSelected": "Godkende valgt",
+    "rejectSelected": "Afvise valgt"
+  },
+  "statuses": {
+    "APPROVED": "Godkendt",
+    "DECLINED": "Afvist",
+    "DRAFT": "Kladde",
+    "DELETED_BY_USER": "Slettet af bruger",
+    "SENT": "Sendt"
+  },
+  "messages": {
+    "updated": "Fradrag opdateret",
+    "created": "Fradrag oprettet",
+    "createAs": "Du opretter denne fradrag som {{- displayName}}",
+    "noOpenDeductions": "Der er ingen udestående fradrag, der afventer godkendelse",
+    "noSalaryDeductions": "Der er ingen fradrag forbundet med denne lønudbetaling",
+    "deductionsSelected_one": "Du har {{count}} fradrag valgt",
+    "deductionsSelected_other": "Du har {{count}} fradrager valgt"
+  },
+  "errors": {
+    "create": "Fejl ved oprettelse af fradrag",
+    "update": "Fejl ved opdatering af fradrag"
+  },
+  "validation": {
+    "fileRequired": "Bilag mangler",
+    "fileTooLarge": "Filen er for stor"
+  }
+}

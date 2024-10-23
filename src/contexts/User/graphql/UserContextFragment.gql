@@ -1,0 +1,18 @@
+fragment UserContextFragment on User {
+  firstName
+  lastName
+  displayName
+  email
+  role
+  id
+  language
+  locale
+  emailVerified
+  referralLinkCode
+  features
+  availableCredits
+  accountSetupComplete
+  phoneNumber
+  referral
+  vacationPayment
+}

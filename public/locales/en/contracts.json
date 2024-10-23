@@ -1,0 +1,37 @@
+{
+  "headers": {
+    "title": "Appendix to employment contract",
+    "paymentTerms": "Payment terms",
+    "taskInformation": "Task information",
+    "invoiceInformation": "Invoice information"
+  },
+  "fields": {
+    "worker": "Worker",
+    "customer": "Customer",
+    "taskNumber": "Task number",
+    "userNumber": "User number",
+    "date": "Date",
+    "invoiceDate": "Invoice date",
+    "startDate": "Start of employment",
+    "endDate": "End of employment",
+    "hours": "Number of hours",
+    "jobType": "Job type",
+    "description": "Description",
+    "paymentType": "Payment type",
+    "paymentAmount": "Payment amount",
+    "vatId": {
+      "dk": "CVR"
+    },
+    "total": "Total",
+    "lineTotal": "Total",
+    "amount": "Amount",
+    "price": "Price",
+    "subtotal": "Subtotal"
+  },
+  "values": {
+    "later": "Agreement later",
+    "empty": "none",
+    "paymentDueDays": "Payment terms: Net {{days}} days - due {{- date}}",
+    "pricePerHour": "Average hourly wage: {{price}} excluding moms"
+  }
+}

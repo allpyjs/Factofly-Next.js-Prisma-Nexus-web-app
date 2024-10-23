@@ -1,0 +1,13 @@
+fragment ReferralFragment on Referral {
+  id
+  email
+  status
+  user {
+    displayName
+    id
+  }
+  referredUser {
+    displayName
+    id
+  }
+}

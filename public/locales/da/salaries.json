@@ -1,0 +1,29 @@
+{
+  "salary": "Løn",
+  "headers": {
+    "search": "Lønninger"
+  },
+  "labels": {
+    "reference": "Reference",
+    "user": "Bruger",
+    "status": "Status",
+    "paymentDate": "Betalingsdato",
+    "grossIncome": "Bruttoindkomst",
+    "paymentAmount": "Betalingsbeløb"
+  },
+  "buttons": {
+    "sendToZenegy": "Sende til Zenegy",
+    "updateFromZenegy": "Opdatering fra Zenegy",
+    "salaryPaid": "Løn udbetalt",
+    "downloadPayslip": "Hent lønseddel",
+    "downloadFeeInvoice": "Hent gebyr faktura"
+  },
+  "messages": {
+    "updated": "Lønninger opdateret"
+  },
+  "statuses": {
+    "DRAFT": "Kladde",
+    "SENT": "Sendt",
+    "PAID": "Betalt"
+  }
+}

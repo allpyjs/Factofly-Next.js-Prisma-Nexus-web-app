@@ -1,0 +1,7 @@
+#import "../../../graphql/CooperationAgreementFragment.gql"
+
+query EditCooperationAgreementFormQuery($where: WhereUniqueInputArgs!) {
+  cooperationAgreement(where: $where) {
+    ...CooperationAgreementFragment
+  }
+}

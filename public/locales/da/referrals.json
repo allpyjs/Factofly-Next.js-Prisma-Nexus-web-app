@@ -1,0 +1,11 @@
+{
+    "headers": {
+        "search": "Henvisninger"
+    },
+    "labels": {
+        "user": "Bruger",
+        "referredEmail": "Henvist e-mailadresse",
+        "referredUser": "Henvist bruger",
+        "status": "Status"
+    }
+}

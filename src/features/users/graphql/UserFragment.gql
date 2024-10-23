@@ -1,0 +1,62 @@
+fragment UserFragment on User {
+  id
+  firstName
+  lastName
+  displayName
+  email
+  phoneNumber
+  unit
+  currency
+  language
+  createdDate
+  updatedDate
+  referral
+  economicCustomerGroupId
+  economicEmployeeId
+  salaryPaymentType
+  salaryPaymentDay
+  salaryPaymentValue
+  baseRate
+  vacationPayment
+
+  jobType {
+    id
+    name_en
+  }
+
+  bankAccount {
+    bankName
+    bankAccount
+    bankRegistration
+  }
+
+  taxInfo {
+    personId
+    taxCard
+    countryId
+  }
+
+  bankAccountHidden {
+    bankName
+    bankAccount
+    bankRegistration
+  }
+
+  taxInfoHidden {
+    personId
+    taxCard
+    countryId
+  }
+
+  address {
+    id
+    address
+    city
+    postalCode
+    countryId
+    country {
+      id
+      name_en
+    }
+  }
+}

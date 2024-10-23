@@ -1,0 +1,73 @@
+{
+  "headers": {
+    "create": "Opret samhandelsaftale",
+    "search": "Samhandelsaftaler",
+    "view": "Samhandelsaftale",
+    "edit": "Rediger samhandelsaftale",
+    "details": "Samhandelsaftale detaljer"
+  },
+  "labels": {
+    "customer": "Kunde",
+    "description": "Beskrivelse",
+    "createdDate": "Dato oprettet",
+    "startDate": "Start dato",
+    "endDate": "Slut dato",
+    "openEnded": "Er det en opgave uden aftalt slutdato?",
+    "terminationAgreement": "Aftale om opsigelse",
+    "taskDescription": "Opgavebeskrivelse",
+    "extraWork": "Ekstraarbejde",
+    "extraWorkNotificationOther": "Specificer venligst...",
+    "extraWorkNotification": "Ekstraarbejde notifikation",
+    "priceDetails": "Detaljer for pris",
+    "specialConditions": "Specielle omstændigheder",
+    "amount": "Antal",
+    "paymentType": "Betalingstype",
+    "paymentTerm": "Betalingsbetingelser",
+    "paymentTermDays": "Dage",
+    "paymentTermOther": "Specificer venligst...",
+    "paymentTermSpecial": "Specielle betingelser vedrørende betaling",
+    "equipmentSupplied": "Udstyr leveret",
+    "equipmentDetails": "Tilføj detaljer...",
+    "user": "Bruger"
+  },
+  "descriptions": {
+    "terminationAgreement": "Hvis det er et fortløbende samarbejde, så beskriv hvad der er aftalt omkring opsigelse. Det kan f.eks. være dag til dag opsigelse, løbende måned, til den første i en måned, etc.",
+    "equipmentSupplied": "Har din kunde udleveret udstyr eller ekstra assistance?",
+    "specialConditions": "Er I enige om et minimums antal timer, maksimal pris, bonus, resultatvilkår, etc. Beskriv det så tydeligt som muligt. ",
+    "priceDetails": "Hvis der er aftalt en fast pris for opgaven. Hvad er så aftalen hvis kunden ønsker ting som ikke er en del af den oprindelige beskrivelse. Er det gratis, Faktureres det pr. time, nyt tilbud med fast pris, etc. "
+  },
+  "buttons": {
+    "submit": "Send samhandelsaftale",
+    "update": "Opdater samhandelsaftale",
+    "edit": "Rediger",
+    "delete": "Slet",
+    "create": "Opret samhandelsaftale"
+  },
+  "messages": {
+    "updated": "Samhandelsaftale opdateret",
+    "created": "Samhandelsaftale oprettet",
+    "deleted": "Samhandelsaftale slettet",
+    "createAs": "Du opretter denne samhandelsaftale som {{- displayName}}"
+  },
+  "errors": {
+    "create": "Fejl ved oprettelse af samhandelsaftale",
+    "update": "Fejl ved opdatering af samhandelsaftale",
+    "delete": "Fejl ved sletning af samhandelsaftale"
+  },
+  "paymentTypes": {
+    "PER_HOUR": "Betaling pr. time",
+    "FIXED": "Samlet fast betaling for opgaven/perioden"
+  },
+  "extraWorkNotifications": {
+    "WRITTEN_ESTIMATE": "Baseret på et estimat",
+    "WRITTEN_FIXED": "Baseret på et fast tilbud",
+    "ORAL": "Mundtligt",
+    "OTHER": "Andet"
+  },
+  "paymentTerms": {
+    "CURRENT_MONTH_PLUS": "Løbende måned + # dage",
+    "ONGOING_WEEK_PLUS": "Løbende uge + # dage",
+    "TASK_END_PLUS": "Ved afslutning af opgaven + # dage",
+    "OTHER": "Andet"
+  }
+}

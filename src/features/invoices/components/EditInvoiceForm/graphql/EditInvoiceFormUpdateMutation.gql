@@ -1,0 +1,7 @@
+#import "../../../graphql/InvoiceFragment.gql"
+
+mutation EditInvoiceFormUpdateMutation($input: InvoiceUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateInvoice(data: $input, where: $where) {
+    ...InvoiceFragment
+  }
+}

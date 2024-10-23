@@ -1,0 +1,22 @@
+POST https://factofly-dev.eu.auth0.com/oauth/token HTTP/1.1
+content-type: application/json
+
+{
+    "grant_type": "client_credentials",
+    "client_id": "hSEo0lvWEzVUqV3rDa8CajtBaiwjmhqX",
+    "client_secret": "",
+    "audience": "https://factofly-graphql-api/"
+}
+
+###
+
+POST https://factofly-dev.eu.auth0.com/oauth/token HTTP/1.1
+content-type: application/json
+
+{
+    "grant_type": "client_credentials",
+    "client_id": "1V7hu0yw0wjXNYZPx4dD6EI3I73jQQNE",
+    "client_secret": "",
+    "audience": "https://factofly-graphql-api/"
+}
+###

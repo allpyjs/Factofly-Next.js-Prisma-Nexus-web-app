@@ -1,0 +1,46 @@
+query SalaryViewQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: InvoiceWhereInputArgs
+  $orderBy: InvoiceOrderByInputArgs
+) {
+  items: invoices(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "SalaryViewItems") {
+    totalCount
+    edges {
+      node {
+        id
+        visibleId
+        status
+        reference
+        createdDate
+        updatedDate
+        currency
+        hoursWorked
+        vacationPayment
+        overdue
+        dueDate
+        earlyPayment
+        user {
+          id
+          displayName
+          salaryPaymentType
+          salaryPaymentDay
+          salaryPaymentValue
+        }
+        customer {
+          id
+          name
+        }
+        invoiceDate
+        totalPrice
+        totalPriceWithVat
+        subtotalDkk
+        paidAmountDkk
+        includeVat
+      }
+      cursor
+    }
+  }
+}

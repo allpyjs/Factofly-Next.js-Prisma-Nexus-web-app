@@ -1,0 +1,59 @@
+query SalaryDetailsQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: SalaryWhereInputArgs
+  $orderBy: SalaryOrderByInputArgs
+) {
+  items: salaries(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "SalaryDetailItems") {
+    totalCount
+    edges {
+      node {
+        id
+        paymentDate
+        userId
+        status
+        user {
+          id
+          displayName
+          email
+          phoneNumber
+          language
+          address {
+            address
+            postalCode
+            city
+            country {
+              name_en
+            }
+          }
+        }
+        invoices {
+          id
+          visibleId
+          invoiceDate
+          hoursWorked
+          reference
+          status
+          subtotalDkk
+          paidAmountDkk
+          includeVat
+          totalPriceWithVat
+          vacationPayment
+          currency
+          totalPrice
+          customer { name }
+        }
+        deductions {
+          id
+          status
+          createdDate
+          description
+          imageUrl
+        }
+      }
+      cursor
+    }
+  }
+}

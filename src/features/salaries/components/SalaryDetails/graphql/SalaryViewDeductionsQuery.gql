@@ -1,0 +1,24 @@
+query SalaryViewDeductionsQuery(
+  $first: Int!
+  $cursor: String
+  $skip: Int
+  $where: DeductionWhereInputArgs
+  $orderBy: DeductionOrderByInputArgs
+) {
+  items: deductions(first: $first, after: $cursor, skip: $skip, where: $where, orderBy: $orderBy)
+    @connection(key: "SalaryViewDeductionItems") {
+    totalCount
+    edges {
+      node {
+        id
+        status
+        active
+        description
+        createdDate
+        updatedDate
+        imageUrl
+      }
+      cursor
+    }
+  }
+}

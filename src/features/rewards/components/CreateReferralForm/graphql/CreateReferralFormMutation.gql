@@ -1,0 +1,9 @@
+mutation CreateReferralFormMutation($input: ReferralCreateInputArgs!) {
+  createReferral(data: $input) {
+    id
+    createdDate
+    updatedDate
+    email
+    status
+  }
+}

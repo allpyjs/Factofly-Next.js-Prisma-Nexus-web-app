@@ -1,0 +1,7 @@
+#import "../../../graphql/UserSettingsFragment.gql"
+
+mutation AccountSetupFormUpdateMutation($input: UserUpdateInputArgs!, $where: WhereUniqueInputArgs!) {
+  updateUser(data: $input, where: $where) {
+    ...UserSettingsFragment
+  }
+}

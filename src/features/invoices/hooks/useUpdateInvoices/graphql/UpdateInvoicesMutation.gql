@@ -1,0 +1,5 @@
+mutation UpdateInvoicesMutation($data: [InvoiceBulkUpdateInputArgs]!) {
+  updateInvoices(data: $data) {
+    success
+  }
+}

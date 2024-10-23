@@ -1,0 +1,8 @@
+mutation CreateSalaryMutation($input: SalaryCreateInputArgs!) {
+  createSalary(data: $input) {
+    id
+    createdDate
+    updatedDate
+    paymentDate
+  }
+}

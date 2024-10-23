@@ -1,0 +1,11 @@
+{
+    "headers": {
+        "search": "Referrals"
+    },
+    "labels": {
+        "user": "User",
+        "referredEmail": "Referred Email Address",
+        "referredUser": "Referred User",
+        "status": "Status"
+    }
+}

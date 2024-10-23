@@ -1,0 +1,8 @@
+query SelectTaskQuery($where: WhereUniqueInputArgs!) {
+  task(where: $where) {
+    startDate
+    endDate
+    customerId
+    expectedHours
+  }
+}

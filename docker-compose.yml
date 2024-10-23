@@ -1,0 +1,33 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: $DATABASE_USER
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
+      POSTGRES_DB: $DATABASE_NAME
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - $DATABASE_PORT:5432
+  # frontend:
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - DATABASE_URL
+  #       - SENTRY_AUTH_TOKEN
+  #       - SENTRY_SAMPLE_RATE
+  #       - SENTRY_DSN
+  #       - AUTH0_CLIENT_ID
+  #       - AUTH0_DOMAIN
+  #       - BASE_URL
+  #       - GOOGLE_TAG_MANAGER_ID
+  #       - SUPPORT_EMAIL
+  #       - NODE_ENV
+  #   image: result/latest
+
+  #   ports:
+  #     - 3005:3000
+volumes:
+  db_data:
